@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Translator | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🧠 VernacularLearn
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="language.html">Languages</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="translator.html" class="active">Translator</a>
+            <a href="ai-assistant.html">AI Assistant</a>
+        </nav>
+
+        <a href="lessons.html" class="nav-button">
+            ← Lessons
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="translator-hero">
+
+        <div class="translator-hero-content">
+
+            <div class="translator-badge">
+                🌍 AI Language Bridge
+            </div>
+
+            <h1>
+                Hindi → Mother Tongue Translator
+            </h1>
+
+            <p>
+                Help teachers deliver primary education in the
+                language children understand at home.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TRANSLATOR
+    ========================== -->
+
+    <main class="translator-section">
+
+        <!-- LANGUAGE SELECTOR -->
+
+        <div class="translation-language-bar">
+
+            <div class="language-select-box">
+
+                <label for="targetLanguage">
+                    Target Language
+                </label>
+
+                <select id="targetLanguage">
+
+                    <option value="Santhali">
+                        Santhali
+                    </option>
+
+                    <option value="Ho">
+                        Ho
+                    </option>
+
+                    <option value="Mundari">
+                        Mundari
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="translation-direction">
+                हिंदी
+                <span>→</span>
+                <strong id="targetLanguageText">
+                    Santhali
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- TRANSLATION GRID -->
+
+        <div class="translator-grid">
+
+
+            <!-- =========================
+                 HINDI INPUT
+            ========================== -->
+
+            <div class="translator-panel">
+
+                <div class="translator-panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            SOURCE
+                        </span>
+
+                        <h2>
+                            Hindi
+                        </h2>
+                    </div>
+
+                    <span class="panel-icon">
+                        🇮🇳
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="hindiInput"
+                    maxlength="1000"
+                    placeholder="Type or paste Hindi lesson content here..."></textarea>
+
+
+                <div class="input-footer">
+
+                    <span id="characterCount">
+                        0 / 1000
+                    </span>
+
+                    <button
+                        class="voice-input-button"
+                        onclick="startVoiceInput()">
+
+                        🎙️ Speak
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 ARROW
+            ========================== -->
+
+            <div class="translation-arrow">
+                →
+            </div>
+
+
+            <!-- =========================
+                 TARGET OUTPUT
+            ========================== -->
+
+            <div class="translator-panel output-panel">
+
+                <div class="translator-panel-header">
+
+                    <div>
+                        <span class="panel-label">
+                            TARGET
+                        </span>
+
+                        <h2 id="outputLanguageTitle">
+                            Santhali
+                        </h2>
+                    </div>
+
+                    <span class="panel-icon">
+                        🌍
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="translationOutput"
+                    class="translation-output">
+
+                    <div class="empty-translation">
+
+                        <span>
+                            🌐
+                        </span>
+
+                        <p>
+                            Your translated content will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="output-footer">
+
+                    <button
+                        class="listen-button"
+                        onclick="listenTranslation()">
+
+                        🔊 Listen
+
+                    </button>
+
+                    <span id="translationStatus">
+                        Ready
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             ACTION BUTTONS
+        ========================== -->
+
+        <div class="translator-actions">
+
+            <button
+                class="secondary-button"
+                onclick="clearTranslation()">
+
+                🗑️ Clear
+
+            </button>
+
+            <button
+                class="primary-button translate-main-button"
+                onclick="translateText()">
+
+                ✨ Translate
+
+            </button>
+
+        </div>
+
+
+        <!-- =========================
+             QUICK EXAMPLES
+        ========================== -->
+
+        <section class="quick-translation-section">
+
+            <div class="section-heading">
+
+                <span>
+                    Quick Examples
+                </span>
+
+                <h2>
+                    Try a classroom sentence
+                </h2>
+
+                <p>
+                    Select an example to place it into the Hindi input box.
+                </p>
+
+            </div>
+
+
+            <div class="quick-example-grid">
+
+                <button
+                    onclick="useExample('पौधे को पानी की आवश्यकता होती है।')">
+
+                    🌱
+                    <span>
+                        पौधे को पानी की आवश्यकता होती है।
+                    </span>
+
+                </button>
+
+
+                <button
+                    onclick="useExample('बच्चों, आज हम गिनती सीखेंगे।')">
+
+                    🔢
+                    <span>
+                        बच्चों, आज हम गिनती सीखेंगे।
+                    </span>
+
+                </button>
+
+
+                <button
+                    onclick="useExample('पौधे की जड़ मिट्टी से पानी लेती है।')">
+
+                    🌿
+                    <span>
+                        पौधे की जड़ मिट्टी से पानी लेती है।
+                    </span>
+
+                </button>
+
+
+                <button
+                    onclick="useExample('दो और तीन को जोड़ने पर पाँच होता है।')">
+
+                    ➕
+                    <span>
+                        दो और तीन को जोड़ने पर पाँच होता है।
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURE INFO
+        ========================== -->
+
+        <section class="translator-info">
+
+            <div class="info-card">
+
+                <span>
+                    🤖
+                </span>
+
+                <h3>
+                    Context-Aware Translation
+                </h3>
+
+                <p>
+                    The planned NLP engine will consider educational
+                    context instead of translating words independently.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>
+                    🎙️
+                </span>
+
+                <h3>
+                    Voice-to-Voice
+                </h3>
+
+                <p>
+                    Teachers will be able to speak Hindi and receive
+                    mother-tongue output for classroom interaction.
+                </p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span>
+                    📱
+                </span>
+
+                <h3>
+                    Offline First
+                </h3>
+
+                <p>
+                    Supported language resources can be stored locally
+                    so essential learning features can work with poor
+                    connectivity.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROTOTYPE NOTICE
+        ========================== -->
+
+        <div class="translator-notice">
+
+            <strong>
+                ℹ️ Prototype Status
+            </strong>
+
+            <p>
+                This interface demonstrates the planned translation
+                workflow. Verified Ho, Mundari and Santhali language
+                models/data will be connected to the translation engine
+                before production use.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 VernacularLearn
+        </p>
+
+        <p>
+            SIH26042 Prototype
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* =====================================
+           LANGUAGE
+        ===================================== */
+
+        const targetLanguage =
+            document.getElementById("targetLanguage");
+
+        const targetLanguageText =
+            document.getElementById("targetLanguageText");
+
+        const outputLanguageTitle =
+            document.getElementById("outputLanguageTitle");
+
+
+        targetLanguage.addEventListener("change", function () {
+
+            const language =
+                this.value;
+
+            targetLanguageText.textContent =
+                language;
+
+            outputLanguageTitle.textContent =
+                language;
+
+            localStorage.setItem(
+                "selectedLanguage",
+                language
+            );
+
+            resetOutput();
+
+        });
+
+
+        /* =====================================
+           LOAD SAVED LANGUAGE
+        ===================================== */
+
+        const savedLanguage =
+            localStorage.getItem("selectedLanguage");
+
+
+        if (
+            savedLanguage &&
+            ["Santhali", "Ho", "Mundari"].includes(savedLanguage)
+        ) {
+
+            targetLanguage.value =
+                savedLanguage;
+
+            targetLanguageText.textContent =
+                savedLanguage;
+
+            outputLanguageTitle.textContent =
+                savedLanguage;
+
+        }
+
+
+        /* =====================================
+           CHARACTER COUNT
+        ===================================== */
+
+        const hindiInput =
+            document.getElementById("hindiInput");
+
+        const characterCount =
+            document.getElementById("characterCount");
+
+
+        hindiInput.addEventListener("input", function () {
+
+            characterCount.textContent =
+                this.value.length + " / 1000";
+
+        });
+
+
+        /* =====================================
+           TRANSLATE
+        ===================================== */
+
+        function translateText() {
+
+            const text =
+                hindiInput.value.trim();
+
+            const language =
+                targetLanguage.value;
+
+            const output =
+                document.getElementById("translationOutput");
+
+            const status =
+                document.getElementById("translationStatus");
+
+
+            if (!text) {
+
+                alert(
+                    "Please enter Hindi content first."
+                );
+
+                return;
+
+            }
+
+
+            status.textContent =
+                "Processing...";
+
+
+            output.innerHTML = `
+
+                <div class="translation-processing">
+
+                    <span class="processing-icon">
+                        🤖
+                    </span>
+
+                    <h3>
+                        Translation Engine
+                    </h3>
+
+                    <p>
+                        Processing Hindi → ${language}
+                    </p>
+
+                </div>
+
+            `;
+
+
+            setTimeout(function () {
+
+                output.innerHTML = `
+
+                    <div class="translation-placeholder">
+
+                        <span>
+                            🌐
+                        </span>
+
+                        <h3>
+                            ${language} Translation
+                        </h3>
+
+                        <p>
+                            Verified ${language} translation
+                            will appear here when the NLP
+                            translation engine is connected.
+                        </p>
+
+                        <small>
+                            Prototype output area
+                        </small>
+
+                    </div>
+
+                `;
+
+
+                status.textContent =
+                    "Prototype";
+
+            }, 900);
+
+        }
+
+
+        /* =====================================
+           CLEAR
+        ===================================== */
+
+        function clearTranslation() {
+
+            hindiInput.value = "";
+
+            characterCount.textContent =
+                "0 / 1000";
+
+            resetOutput();
+
+        }
+
+
+        function resetOutput() {
+
+            const output =
+                document.getElementById("translationOutput");
+
+            const status =
+                document.getElementById("translationStatus");
+
+
+            output.innerHTML = `
+
+                <div class="empty-translation">
+
+                    <span>
+                        🌐
+                    </span>
+
+                    <p>
+                        Your translated content will appear here.
+                    </p>
+
+                </div>
+
+            `;
+
+            status.textContent =
+                "Ready";
+
+        }
+
+
+        /* =====================================
+           QUICK EXAMPLE
+        ===================================== */
+
+        function useExample(text) {
+
+            hindiInput.value =
+                text;
+
+            characterCount.textContent =
+                text.length + " / 1000";
+
+            hindiInput.focus();
+
+        }
+
+
+        /* =====================================
+           VOICE INPUT DEMO
+        ===================================== */
+
+        function startVoiceInput() {
+
+            alert(
+                "🎙️ Voice Input\n\n" +
+                "Teacher Hindi speech → Speech Recognition → Hindi text.\n\n" +
+                "The real voice-to-voice pipeline will be connected in the next stage."
+            );
+
+        }
+
+
+        /* =====================================
+           LISTEN DEMO
+        ===================================== */
+
+        function listenTranslation() {
+
+            alert(
+                "🔊 Audio Output\n\n" +
+                "Text-to-speech for the selected mother tongue will be connected after the verified translation engine is integrated."
+            );
+
+        }
+
+    </script>
+
+</body>
+
+  </html>
