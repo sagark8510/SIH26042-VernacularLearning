@@ -1426,3 +1426,297 @@ section {
     }
 
 }
+
+/* ==========================================
+   INDIVIDUAL LESSON PAGE
+========================================== */
+
+.lesson-view-hero {
+    padding: 75px 8% 45px;
+    text-align: center;
+}
+
+.lesson-view-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.lesson-view-hero h1 {
+    font-size: clamp(36px, 6vw, 58px);
+    margin: 15px 0;
+    line-height: 1.1;
+}
+
+.lesson-view-hero p {
+    max-width: 680px;
+    margin: auto;
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+.lesson-view-meta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.lesson-view-meta span {
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+/* ==========================================
+   CONTENT PANELS
+========================================== */
+
+.lesson-content-section {
+    padding: 35px 8% 90px;
+}
+
+.lesson-content-grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.content-panel {
+    padding: 30px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mother-tongue-panel {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.content-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.content-tag {
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.content-panel h2 {
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.content-panel p {
+    font-size: 15px;
+    line-height: 1.8;
+    opacity: 0.75;
+    margin-bottom: 15px;
+}
+
+.translation-note {
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.translation-note span {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.translation-note p {
+    margin: 8px 0 0;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   LESSON TOOLS
+========================================== */
+
+.lesson-tools {
+    max-width: 1050px;
+    margin: 25px auto 45px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.lesson-tool-button {
+    border: none;
+    padding: 14px 20px;
+    border-radius: 13px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.08);
+    transition: 0.2s ease;
+}
+
+.lesson-tool-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   ACTIVITY
+========================================== */
+
+.activity-card {
+    max-width: 850px;
+    margin: 0 auto 60px;
+    padding: 32px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.activity-header {
+    margin-bottom: 22px;
+}
+
+.activity-card > p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.answer-options button {
+    border: none;
+    padding: 15px;
+    border-radius: 13px;
+    text-align: left;
+    cursor: pointer;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.07);
+    transition: 0.2s ease;
+}
+
+.answer-options button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.answer-result {
+    margin-top: 20px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+    display: none;
+}
+
+.answer-result.correct,
+.answer-result.wrong {
+    display: block;
+}
+
+
+/* ==========================================
+   NEXT SECTION
+========================================== */
+
+.lesson-next-section {
+    max-width: 1050px;
+    margin: auto;
+    padding: 32px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.lesson-next-section h2 {
+    margin: 5px 0 10px;
+    font-size: 27px;
+}
+
+.lesson-next-section p {
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.65;
+}
+
+.lesson-next-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+
+/* ==========================================
+   LESSON MOBILE
+========================================== */
+
+@media (max-width: 750px) {
+
+    .lesson-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .answer-options {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-next-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lesson-next-buttons {
+        width: 100%;
+    }
+
+    .lesson-next-buttons .primary-button,
+    .lesson-next-buttons .secondary-button {
+        flex: 1;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .lesson-view-hero {
+        padding-top: 55px;
+    }
+
+    .content-panel,
+    .activity-card,
+    .lesson-next-section {
+        padding: 23px;
+    }
+
+    .lesson-tools {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .lesson-tool-button {
+        width: 100%;
+    }
+
+}
