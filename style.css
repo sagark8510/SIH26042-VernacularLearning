@@ -1089,3 +1089,340 @@ section {
 
 }
 
+/* ==========================================
+   LESSONS PAGE
+========================================== */
+
+.lessons-hero {
+    padding: 85px 8% 55px;
+    text-align: center;
+}
+
+.lessons-hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.lessons-hero h1 {
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: 1.1;
+    margin: 12px 0 20px;
+}
+
+.lessons-hero h1 span {
+    display: block;
+}
+
+.lessons-hero p {
+    max-width: 680px;
+    margin: auto;
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.72;
+}
+
+
+/* ==========================================
+   CURRENT LANGUAGE
+========================================== */
+
+.current-language {
+    padding: 10px 8% 55px;
+}
+
+.current-language-card {
+    max-width: 1050px;
+    margin: auto;
+    padding: 28px 32px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.current-language-card h2 {
+    margin: 5px 0 8px;
+    font-size: 27px;
+}
+
+.current-language-card p {
+    margin: 0;
+    max-width: 650px;
+    line-height: 1.6;
+    opacity: 0.65;
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: 13px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.08);
+    color: inherit;
+    transition: 0.2s ease;
+}
+
+.secondary-button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.13);
+}
+
+
+/* ==========================================
+   LESSON CATEGORIES
+========================================== */
+
+.lesson-section {
+    padding: 65px 8% 80px;
+}
+
+.category-grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    padding: 28px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: 0.25s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+.category-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.category-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.category-card p {
+    margin: 0 0 22px;
+    font-size: 14px;
+    line-height: 1.65;
+    opacity: 0.65;
+}
+
+.category-button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   AVAILABLE LESSONS
+========================================== */
+
+.available-lessons {
+    padding: 70px 8% 90px;
+}
+
+.lesson-grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.lesson-card {
+    padding: 25px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: 0.25s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.lesson-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.lesson-type,
+.lesson-level {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.lesson-level {
+    opacity: 0.65;
+}
+
+.lesson-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.lesson-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+}
+
+.lesson-card > p {
+    margin: 0 0 18px;
+    font-size: 14px;
+    line-height: 1.65;
+    opacity: 0.65;
+}
+
+.lesson-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    opacity: 0.65;
+}
+
+.lesson-button {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.09);
+    color: inherit;
+    transition: 0.2s ease;
+}
+
+.lesson-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   AI LESSON BANNER
+========================================== */
+
+.lesson-ai-banner {
+    max-width: 1050px;
+    margin: 20px auto 90px;
+    padding: 35px;
+    border-radius: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lesson-ai-icon {
+    min-width: 62px;
+    height: 62px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.lesson-ai-content h2 {
+    margin: 6px 0 12px;
+    font-size: 28px;
+    line-height: 1.25;
+}
+
+.lesson-ai-content p {
+    max-width: 750px;
+    margin: 0 0 22px;
+    line-height: 1.7;
+    opacity: 0.65;
+}
+
+
+/* ==========================================
+   LESSONS RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .category-grid,
+    .lesson-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .lessons-hero {
+        padding-top: 60px;
+    }
+
+    .current-language-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .secondary-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .category-grid,
+    .lesson-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-ai-banner {
+        margin-left: 8%;
+        margin-right: 8%;
+        flex-direction: column;
+    }
+
+    .lesson-ai-content h2 {
+        font-size: 23px;
+    }
+
+}
