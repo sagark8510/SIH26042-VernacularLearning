@@ -26,6 +26,7 @@
             <a href="index.html">Home</a>
             <a href="language.html">Languages</a>
             <a href="lessons.html">Lessons</a>
+            <a href="translator.html">Translator</a>
             <a href="ai-assistant.html">AI Assistant</a>
         </nav>
 
@@ -62,7 +63,9 @@
 
                 <span>⏱️ 20 Minutes</span>
 
-                <span>🌐 <span id="lessonLanguage">Santhali</span></span>
+                <span>
+                    🌐 <span id="lessonLanguage">Santhali</span>
+                </span>
 
             </div>
 
@@ -80,7 +83,7 @@
         <div class="lesson-content-grid">
 
 
-            <!-- HINDI TEACHER INPUT -->
+            <!-- HINDI CONTENT -->
 
             <div class="content-panel">
 
@@ -107,7 +110,7 @@
             </div>
 
 
-            <!-- MOTHER TONGUE -->
+            <!-- MOTHER TONGUE CONTENT -->
 
             <div class="content-panel mother-tongue-panel">
 
@@ -122,17 +125,19 @@
                 </div>
 
                 <h2 id="motherTongueTitle">
-                    Mother-Tongue Output
+                    Mother-Tongue Explanation
                 </h2>
 
                 <p id="motherTongueContent">
-                    Prototype mode: the translated explanation for the selected
-                    language will appear here.
+                    Prototype mode: verified mother-tongue translation
+                    will be connected through the language engine.
                 </p>
 
                 <div class="translation-note">
-                    ⚠️ Prototype translation output — language accuracy will be
-                    connected to the verified NLP engine in the next stage.
+
+                    ⚠️ Prototype translation output — verified language
+                    data/NLP engine will be connected in the next stage.
+
                 </div>
 
             </div>
@@ -146,6 +151,8 @@
 
         <div class="lesson-tools">
 
+            <!-- LISTEN -->
+
             <button
                 class="lesson-tool-button"
                 onclick="playExplanation()">
@@ -154,13 +161,19 @@
 
             </button>
 
-            <button
-                class="lesson-tool-button"
-                onclick="showTranslationInfo()">
+
+            <!-- DIRECT TRANSLATOR LINK -->
+
+            <a
+                href="translator.html"
+                class="lesson-tool-button">
 
                 🔄 Translation
 
-            </button>
+            </a>
+
+
+            <!-- VOICE -->
 
             <button
                 class="lesson-tool-button"
@@ -193,27 +206,10 @@
                 Which part of a plant helps it take water and minerals from the soil?
             </h2>
 
-
-            <div class="answer-options" id="answerOptions">
-
-                <button onclick="checkAnswer(this, false)">
-                    🌸 Flower
-                </button>
-
-                <button onclick="checkAnswer(this, true)">
-                    🌱 Root
-                </button>
-
-                <button onclick="checkAnswer(this, false)">
-                    🍃 Leaf
-                </button>
-
-                <button onclick="checkAnswer(this, false)">
-                    🌿 Stem
-                </button>
-
+            <div
+                class="answer-options"
+                id="answerOptions">
             </div>
-
 
             <div
                 id="answerResult"
@@ -226,7 +222,7 @@
 
 
     <!-- =========================
-         NEXT SECTION
+         CONTINUE LEARNING
     ========================== -->
 
     <section class="lesson-next-section">
@@ -236,16 +232,17 @@
         </h2>
 
         <p>
-            Explore more lessons or ask the AI assistant for help.
+            Explore more lessons or use the AI translator
+            for classroom teaching.
         </p>
 
         <div class="lesson-next-buttons">
 
             <a
-                href="ai-assistant.html"
+                href="translator.html"
                 class="primary-button">
 
-                🤖 Ask AI Assistant
+                🌍 Open Translator
 
             </a>
 
@@ -286,7 +283,7 @@
     <script>
 
         /* =====================================
-           LESSON DATABASE
+           LESSON DATA
         ===================================== */
 
         const lessons = {
@@ -306,7 +303,7 @@
                     "Mother-Tongue Plant Explanation",
 
                 motherContent:
-                    "Prototype mode: verified mother-tongue translation for this lesson will be connected through the language model.",
+                    "Prototype mode: verified mother-tongue translation for this lesson will be connected through the language engine.",
 
                 question:
                     "Which part of a plant helps it take water and minerals from the soil?",
@@ -474,7 +471,7 @@
 
 
         /* =====================================
-           LOAD SELECTED LESSON
+           SELECTED LESSON
         ===================================== */
 
         const selectedLesson =
@@ -493,7 +490,7 @@
 
 
         /* =====================================
-           UPDATE PAGE
+           DISPLAY LESSON
         ===================================== */
 
         document.getElementById("lessonTitle")
@@ -529,14 +526,11 @@
 
 
         /* =====================================
-           CREATE ANSWER OPTIONS
+           CREATE OPTIONS
         ===================================== */
 
         const answerOptions =
             document.getElementById("answerOptions");
-
-
-        answerOptions.innerHTML = "";
 
 
         lesson.options.forEach(function(option) {
@@ -545,7 +539,8 @@
                 document.createElement("button");
 
 
-            button.textContent = option[0];
+            button.textContent =
+                option[0];
 
 
             button.onclick = function() {
@@ -564,7 +559,7 @@
 
 
         /* =====================================
-           ANSWER CHECK
+           CHECK ANSWER
         ===================================== */
 
         function checkAnswer(button, isCorrect) {
@@ -578,33 +573,51 @@
                 result.textContent =
                     "✅ Correct! Great job!";
 
-                result.style.display =
-                    "block";
-
             } else {
 
                 result.textContent =
                     "❌ Not quite. Try again!";
 
-                result.style.display =
-                    "block";
-
             }
+
+            result.style.display =
+                "block";
 
         }
 
 
         /* =====================================
-   TRANSLATION
-===================================== */
+           LISTEN DEMO
+        ===================================== */
 
-function showTranslationInfo() {
+        function playExplanation() {
 
-    localStorage.setItem(
-        "selectedLanguage",
-        selectedLanguage
-    );
+            alert(
+                "🔊 Audio Output\n\n" +
+                "Mother-tongue audio will be connected through the verified text-to-speech system."
+            );
 
-    window.location.href = "translator.html";
+        }
 
-}
+
+        /* =====================================
+           VOICE TRANSLATION DEMO
+        ===================================== */
+
+        function startVoiceDemo() {
+
+            alert(
+                "🎙️ Voice Translation\n\n" +
+                "Teacher speaks Hindi → " +
+                selectedLanguage +
+                " output.\n\n" +
+                "The real voice-to-voice engine will be integrated in the next stage."
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
