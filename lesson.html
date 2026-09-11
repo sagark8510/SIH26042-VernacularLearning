@@ -25,7 +25,7 @@
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="language.html">Languages</a>
-            <a href="lessons.html" class="active">Lessons</a>
+            <a href="lessons.html">Lessons</a>
             <a href="ai-assistant.html">AI Assistant</a>
         </nav>
 
@@ -37,255 +37,229 @@
 
 
     <!-- =========================
-         LESSON HEADER
+         LESSON HERO
     ========================== -->
 
-    <main>
+    <section class="lesson-view-hero">
 
-        <section class="lesson-view-hero">
+        <div class="lesson-view-content">
 
-            <div class="lesson-view-content">
+            <div class="lesson-badge">
+                📚 Interactive Lesson
+            </div>
 
-                <span class="section-badge">
-                    🌱 FLN Lesson
-                </span>
+            <h1 id="lessonTitle">
+                Understanding Plants
+            </h1>
 
-                <h1 id="lessonTitle">
-                    Understanding Plants
-                </h1>
+            <p id="lessonDescription">
+                Learn the basic parts of a plant and understand their functions.
+            </p>
 
-                <p>
-                    Learn the concept through simple explanations,
-                    mother-tongue support and interactive activities.
+            <div class="lesson-view-meta">
+
+                <span>🎓 Level 1</span>
+
+                <span>⏱️ 20 Minutes</span>
+
+                <span>🌐 <span id="lessonLanguage">Santhali</span></span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LESSON CONTENT
+    ========================== -->
+
+    <section class="lesson-content-section">
+
+        <div class="lesson-content-grid">
+
+
+            <!-- HINDI TEACHER INPUT -->
+
+            <div class="content-panel">
+
+                <div class="content-panel-header">
+
+                    <span class="content-tag">
+                        Hindi Teacher Input
+                    </span>
+
+                    🗣️
+
+                </div>
+
+                <h2 id="hindiTitle">
+                    पौधे हमारे आसपास
+                </h2>
+
+                <p id="hindiContent">
+                    पौधे हमारे आसपास पाए जाते हैं। एक पौधे के अलग-अलग भाग होते हैं,
+                    जैसे जड़, तना, पत्तियाँ और फूल। प्रत्येक भाग पौधे के लिए
+                    महत्वपूर्ण काम करता है।
                 </p>
 
-                <div class="lesson-view-meta">
-                    <span>📚 Level 1</span>
-                    <span>⏱️ 20 minutes</span>
-                    <span id="lessonLanguage">Santhali</span>
+            </div>
+
+
+            <!-- MOTHER TONGUE -->
+
+            <div class="content-panel mother-tongue-panel">
+
+                <div class="content-panel-header">
+
+                    <span class="content-tag">
+                        Mother-Tongue Explanation
+                    </span>
+
+                    🌍
+
+                </div>
+
+                <h2 id="motherTongueTitle">
+                    Mother-Tongue Output
+                </h2>
+
+                <p id="motherTongueContent">
+                    Prototype mode: the translated explanation for the selected
+                    language will appear here.
+                </p>
+
+                <div class="translation-note">
+                    ⚠️ Prototype translation output — language accuracy will be
+                    connected to the verified NLP engine in the next stage.
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
 
         <!-- =========================
-             LESSON CONTENT
+             LESSON TOOLS
         ========================== -->
 
-        <section class="lesson-content-section">
+        <div class="lesson-tools">
 
-            <div class="lesson-content-grid">
+            <button
+                class="lesson-tool-button"
+                onclick="playExplanation()">
 
+                🔊 Listen
 
-                <!-- Hindi Content -->
+            </button>
 
-                <article class="content-panel">
+            <button
+                class="lesson-tool-button"
+                onclick="showTranslationInfo()">
 
-                    <div class="content-panel-header">
+                🔄 Translation
 
-                        <span>🇮🇳 Teacher Input</span>
+            </button>
 
-                        <span class="content-tag">
-                            Hindi
-                        </span>
+            <button
+                class="lesson-tool-button"
+                onclick="startVoiceDemo()">
 
-                    </div>
+                🎙️ Voice Translation
 
-                    <h2>
-                        पौधों को समझना
-                    </h2>
+            </button>
 
-                    <p>
-                        पौधे हमारे आसपास पाए जाते हैं। पौधों के
-                        अलग-अलग भाग होते हैं, जैसे जड़, तना, पत्तियाँ
-                        और फूल।
-                    </p>
-
-                    <p>
-                        जड़ पौधे को मिट्टी में मजबूती से पकड़कर रखती है
-                        और मिट्टी से पानी तथा खनिज प्राप्त करने में
-                        सहायता करती है।
-                    </p>
-
-                    <p>
-                        पत्तियाँ पौधे के लिए भोजन बनाने में महत्वपूर्ण
-                        भूमिका निभाती हैं।
-                    </p>
-
-                </article>
+        </div>
 
 
-                <!-- Mother Tongue -->
+        <!-- =========================
+             ACTIVITY
+        ========================== -->
 
-                <article class="content-panel mother-tongue-panel">
+        <div class="activity-card">
 
-                    <div class="content-panel-header">
+            <div class="activity-header">
 
-                        <span>🗣️ Mother-Tongue Explanation</span>
+                <span class="content-tag">
+                    Practice Activity
+                </span>
 
-                        <span class="content-tag">
-                            Santhali
-                        </span>
-
-                    </div>
-
-                    <h2>
-                        Simple Explanation
-                    </h2>
-
-                    <p id="translatedText">
-                        This prototype demonstrates how Hindi
-                        teaching content can be presented with
-                        mother-tongue learning support.
-                    </p>
-
-                    <div class="translation-note">
-
-                        <span>🤖 AI Translation Layer</span>
-
-                        <p>
-                            Context-aware translation is designed
-                            to preserve the meaning of classroom
-                            content rather than translating words
-                            mechanically.
-                        </p>
-
-                    </div>
-
-                </article>
+                📝
 
             </div>
 
+            <h2 id="question">
+                Which part of a plant helps it take water and minerals from the soil?
+            </h2>
 
-            <!-- =========================
-                 AUDIO / TRANSLATION
-            ========================== -->
 
-            <div class="lesson-tools">
+            <div class="answer-options" id="answerOptions">
 
-                <button
-                    class="lesson-tool-button"
-                    onclick="playExplanation()"
-                >
-                    🔊 Listen to Explanation
+                <button onclick="checkAnswer(this, false)">
+                    🌸 Flower
                 </button>
 
-                <button
-                    class="lesson-tool-button"
-                    onclick="showTranslationInfo()"
-                >
-                    🔁 Translation
+                <button onclick="checkAnswer(this, true)">
+                    🌱 Root
                 </button>
 
-                <button
-                    class="lesson-tool-button"
-                    onclick="startVoiceDemo()"
-                >
-                    🎙️ Voice Translation
+                <button onclick="checkAnswer(this, false)">
+                    🍃 Leaf
+                </button>
+
+                <button onclick="checkAnswer(this, false)">
+                    🌿 Stem
                 </button>
 
             </div>
 
 
-            <!-- =========================
-                 ACTIVITY
-            ========================== -->
+            <div
+                id="answerResult"
+                class="answer-result">
+            </div>
 
-            <section class="activity-card">
+        </div>
 
-                <div class="activity-header">
-
-                    <span class="small-label">
-                        Quick Activity
-                    </span>
-
-                    <h2>
-                        Check Your Understanding
-                    </h2>
-
-                </div>
-
-                <p>
-                    Which part of a plant helps it take water
-                    and minerals from the soil?
-                </p>
-
-                <div class="answer-options">
-
-                    <button onclick="checkAnswer(this, false)">
-                        🌸 Flower
-                    </button>
-
-                    <button onclick="checkAnswer(this, true)">
-                        🌱 Root
-                    </button>
-
-                    <button onclick="checkAnswer(this, false)">
-                        🍃 Leaf
-                    </button>
-
-                    <button onclick="checkAnswer(this, false)">
-                        🌿 Stem
-                    </button>
-
-                </div>
-
-                <div
-                    id="answerResult"
-                    class="answer-result"
-                ></div>
-
-            </section>
+    </section>
 
 
-            <!-- =========================
-                 NEXT STEPS
-            ========================== -->
+    <!-- =========================
+         NEXT SECTION
+    ========================== -->
 
-            <section class="lesson-next-section">
+    <section class="lesson-next-section">
 
-                <div>
+        <h2>
+            Continue Learning
+        </h2>
 
-                    <span class="small-label">
-                        Continue Learning
-                    </span>
+        <p>
+            Explore more lessons or ask the AI assistant for help.
+        </p>
 
-                    <h2>
-                        Ready for the next activity?
-                    </h2>
+        <div class="lesson-next-buttons">
 
-                    <p>
-                        Generate practice material and
-                        continue learning in your selected language.
-                    </p>
+            <a
+                href="ai-assistant.html"
+                class="primary-button">
 
-                </div>
+                🤖 Ask AI Assistant
 
-                <div class="lesson-next-buttons">
+            </a>
 
-                    <a
-                        href="ai-assistant.html"
-                        class="primary-button"
-                    >
-                        🤖 Ask AI
-                    </a>
+            <a
+                href="lessons.html"
+                class="secondary-button">
 
-                    <a
-                        href="lessons.html"
-                        class="secondary-button"
-                    >
-                        More Lessons
-                    </a>
+                📚 More Lessons
 
-                </div>
+            </a>
 
-            </section>
+        </div>
 
-        </section>
-
-    </main>
+    </section>
 
 
     <!-- =========================
@@ -294,26 +268,13 @@
 
     <footer class="footer">
 
-        <div class="footer-content">
+        <p>
+            © 2026 VernacularLearn
+        </p>
 
-            <div>
-                <strong>
-                    🧠 VernacularLearn
-                </strong>
-
-                <p>
-                    AI-assisted mother-tongue learning
-                    for primary education.
-                </p>
-            </div>
-
-            <div>
-                <p>
-                    SIH26042 Prototype
-                </p>
-            </div>
-
-        </div>
+        <p>
+            SIH26042 Prototype
+        </p>
 
     </footer>
 
@@ -324,83 +285,359 @@
 
     <script>
 
-        const savedLanguage =
-            localStorage.getItem("selectedLanguage");
+        /* =====================================
+           LESSON DATABASE
+        ===================================== */
 
-        if (savedLanguage) {
+        const lessons = {
 
-            document.getElementById("lessonLanguage")
-                .textContent = "🗣️ " + savedLanguage;
+            "Understanding Plants": {
 
-        }
+                description:
+                    "Learn the basic parts of a plant and understand their functions.",
 
+                hindiTitle:
+                    "पौधे हमारे आसपास",
 
-        const savedLesson =
-            localStorage.getItem("selectedLesson");
+                hindiContent:
+                    "पौधे हमारे आसपास पाए जाते हैं। एक पौधे के अलग-अलग भाग होते हैं, जैसे जड़, तना, पत्तियाँ और फूल। प्रत्येक भाग पौधे के लिए महत्वपूर्ण काम करता है।",
 
-        if (savedLesson) {
+                motherTitle:
+                    "Mother-Tongue Plant Explanation",
 
-            document.getElementById("lessonTitle")
-                .textContent = savedLesson;
+                motherContent:
+                    "Prototype mode: verified mother-tongue translation for this lesson will be connected through the language model.",
 
-        }
+                question:
+                    "Which part of a plant helps it take water and minerals from the soil?",
 
+                options: [
+                    ["🌸 Flower", false],
+                    ["🌱 Root", true],
+                    ["🍃 Leaf", false],
+                    ["🌿 Stem", false]
+                ]
 
-        function playExplanation() {
-
-            alert(
-                "🔊 Audio Demo\n\n" +
-                "This prototype will play the translated " +
-                "mother-tongue explanation here."
-            );
-
-        }
-
-
-        function showTranslationInfo() {
-
-            alert(
-                "🔁 Translation Layer\n\n" +
-                "Hindi classroom content → " +
-                "context-aware mother-tongue output."
-            );
-
-        }
+            },
 
 
-        function startVoiceDemo() {
+            "Learning Letters": {
 
-            alert(
-                "🎙️ Voice Translation Demo\n\n" +
-                "Teacher Hindi speech → " +
-                "mother-tongue text and voice."
-            );
+                description:
+                    "Learn basic letters and understand their sounds.",
 
-        }
+                hindiTitle:
+                    "अक्षरों की पहचान",
+
+                hindiContent:
+                    "अक्षर भाषा की मूल इकाइयाँ होते हैं। हम अलग-अलग अक्षरों को मिलाकर शब्द बनाते हैं। आज हम कुछ सरल अक्षरों को पहचानना और बोलना सीखेंगे।",
+
+                motherTitle:
+                    "Mother-Tongue Letter Explanation",
+
+                motherContent:
+                    "Prototype mode: mother-tongue letter and pronunciation support will be connected with the language engine.",
+
+                question:
+                    "Letters are used to make what?",
+
+                options: [
+                    ["🌳 Trees", false],
+                    ["🔢 Numbers", false],
+                    ["📝 Words", true],
+                    ["🌧️ Rain", false]
+                ]
+
+            },
 
 
-        function checkAnswer(button, correct) {
+            "Counting Numbers": {
+
+                description:
+                    "Learn to count numbers from 1 to 10.",
+
+                hindiTitle:
+                    "गिनती सीखें",
+
+                hindiContent:
+                    "गिनती हमें वस्तुओं की संख्या बताने में मदद करती है। आज हम 1 से 10 तक की गिनती सीखेंगे और वस्तुओं को गिनना सीखेंगे।",
+
+                motherTitle:
+                    "Mother-Tongue Counting Explanation",
+
+                motherContent:
+                    "Prototype mode: target-language number names and audio will be connected through the language engine.",
+
+                question:
+                    "What number comes after 4?",
+
+                options: [
+                    ["3", false],
+                    ["5", true],
+                    ["6", false],
+                    ["2", false]
+                ]
+
+            },
+
+
+            "Simple Words": {
+
+                description:
+                    "Learn simple everyday words and their meanings.",
+
+                hindiTitle:
+                    "सरल शब्द",
+
+                hindiContent:
+                    "शब्दों का उपयोग हम अपने विचारों और बातों को व्यक्त करने के लिए करते हैं। हम आज कुछ आसान और रोज़मर्रा में इस्तेमाल होने वाले शब्द सीखेंगे।",
+
+                motherTitle:
+                    "Mother-Tongue Word Explanation",
+
+                motherContent:
+                    "Prototype mode: verified vocabulary mapping will be connected to the selected tribal language.",
+
+                question:
+                    "Which of these is a word?",
+
+                options: [
+                    ["Book", true],
+                    ["7", false],
+                    ["+", false],
+                    ["123", false]
+                ]
+
+            },
+
+
+            "Basic Addition": {
+
+                description:
+                    "Learn how to add small numbers using simple examples.",
+
+                hindiTitle:
+                    "सरल जोड़",
+
+                hindiContent:
+                    "जोड़ का अर्थ दो या दो से अधिक संख्याओं को मिलाना होता है। उदाहरण के लिए, यदि हमारे पास 2 आम हैं और 3 आम और मिल जाते हैं, तो हमारे पास कुल 5 आम होंगे।",
+
+                motherTitle:
+                    "Mother-Tongue Addition Explanation",
+
+                motherContent:
+                    "Prototype mode: bilingual mathematical explanation will be connected to the selected language.",
+
+                question:
+                    "What is 2 + 3?",
+
+                options: [
+                    ["4", false],
+                    ["5", true],
+                    ["6", false],
+                    ["7", false]
+                ]
+
+            },
+
+
+            "Animals Around Us": {
+
+                description:
+                    "Learn about common animals that live around us.",
+
+                hindiTitle:
+                    "हमारे आसपास के जानवर",
+
+                hindiContent:
+                    "हमारे आसपास कई प्रकार के जानवर पाए जाते हैं। कुछ जानवर हमारे घरों के पास रहते हैं और कुछ जंगलों में रहते हैं। हम आज कुछ सामान्य जानवरों के बारे में जानेंगे।",
+
+                motherTitle:
+                    "Mother-Tongue Animal Explanation",
+
+                motherContent:
+                    "Prototype mode: target-language animal names and audio will be connected through the language engine.",
+
+                question:
+                    "Which animal is commonly known for giving us milk?",
+
+                options: [
+                    ["🐄 Cow", true],
+                    ["🦁 Lion", false],
+                    ["🐯 Tiger", false],
+                    ["🐘 Elephant", false]
+                ]
+
+            }
+
+        };
+
+
+        /* =====================================
+           LOAD SELECTED LESSON
+        ===================================== */
+
+        const selectedLesson =
+            localStorage.getItem("selectedLesson")
+            || "Understanding Plants";
+
+
+        const selectedLanguage =
+            localStorage.getItem("selectedLanguage")
+            || "Santhali";
+
+
+        const lesson =
+            lessons[selectedLesson]
+            || lessons["Understanding Plants"];
+
+
+        /* =====================================
+           UPDATE PAGE
+        ===================================== */
+
+        document.getElementById("lessonTitle")
+            .textContent = selectedLesson;
+
+
+        document.getElementById("lessonDescription")
+            .textContent = lesson.description;
+
+
+        document.getElementById("lessonLanguage")
+            .textContent = selectedLanguage;
+
+
+        document.getElementById("hindiTitle")
+            .textContent = lesson.hindiTitle;
+
+
+        document.getElementById("hindiContent")
+            .textContent = lesson.hindiContent;
+
+
+        document.getElementById("motherTongueTitle")
+            .textContent = lesson.motherTitle;
+
+
+        document.getElementById("motherTongueContent")
+            .textContent = lesson.motherContent;
+
+
+        document.getElementById("question")
+            .textContent = lesson.question;
+
+
+        /* =====================================
+           CREATE ANSWER OPTIONS
+        ===================================== */
+
+        const answerOptions =
+            document.getElementById("answerOptions");
+
+
+        answerOptions.innerHTML = "";
+
+
+        lesson.options.forEach(function(option) {
+
+            const button =
+                document.createElement("button");
+
+
+            button.textContent = option[0];
+
+
+            button.onclick = function() {
+
+                checkAnswer(
+                    button,
+                    option[1]
+                );
+
+            };
+
+
+            answerOptions.appendChild(button);
+
+        });
+
+
+        /* =====================================
+           ANSWER CHECK
+        ===================================== */
+
+        function checkAnswer(button, isCorrect) {
 
             const result =
                 document.getElementById("answerResult");
 
-            if (correct) {
+
+            if (isCorrect) {
 
                 result.textContent =
-                    "✅ Correct! Roots help the plant absorb water and minerals from the soil.";
+                    "✅ Correct! Great job!";
 
-                result.className =
-                    "answer-result correct";
+                result.style.display =
+                    "block";
 
             } else {
 
                 result.textContent =
                     "❌ Not quite. Try again!";
 
-                result.className =
-                    "answer-result wrong";
+                result.style.display =
+                    "block";
 
             }
+
+        }
+
+
+        /* =====================================
+           LISTEN DEMO
+        ===================================== */
+
+        function playExplanation() {
+
+            alert(
+                "🔊 Audio Demo\n\n" +
+                "The selected lesson's mother-tongue audio will be played here."
+            );
+
+        }
+
+
+        /* =====================================
+           TRANSLATION DEMO
+        ===================================== */
+
+        function showTranslationInfo() {
+
+            alert(
+                "🔄 Translation Engine\n\n" +
+                "Hindi → " +
+                selectedLanguage +
+                "\n\n" +
+                "This prototype screen is ready for integration with the verified NLP translation engine."
+            );
+
+        }
+
+
+        /* =====================================
+           VOICE TRANSLATION DEMO
+        ===================================== */
+
+        function startVoiceDemo() {
+
+            alert(
+                "🎙️ Voice Translation Demo\n\n" +
+                "Teacher speaks Hindi → " +
+                selectedLanguage +
+                " output.\n\n" +
+                "Real-time voice translation will be integrated in the next module."
+            );
 
         }
 
