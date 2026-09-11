@@ -796,3 +796,295 @@ section {
     outline: 3px solid rgba(37, 99, 235, 0.35);
     outline-offset: 3px;
 }
+
+/* ==========================================
+   LANGUAGE PAGE
+========================================== */
+
+.language-hero {
+    padding: 90px 8% 60px;
+    text-align: center;
+}
+
+.language-hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.section-badge,
+.small-label {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.language-hero h1 {
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.language-hero h1 span {
+    display: block;
+}
+
+.language-hero p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.75;
+}
+
+
+/* ==========================================
+   LANGUAGE SELECTION
+========================================== */
+
+.language-section {
+    padding: 50px 8% 90px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    margin: 8px 0 12px;
+}
+
+.section-heading p {
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+
+/* Language Cards */
+
+.language-grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.language-card {
+    width: 100%;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.25s ease;
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+}
+
+.language-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.language-card.selected {
+    border-color: #4f8cff;
+    box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.12);
+}
+
+.language-icon {
+    min-width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.language-info h3 {
+    margin: 0 0 6px;
+    font-size: 21px;
+}
+
+.language-info p {
+    margin: 0 0 8px;
+    opacity: 0.65;
+    font-size: 14px;
+}
+
+.language-status {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.language-status.coming {
+    opacity: 0.55;
+}
+
+
+/* Selected Language Box */
+
+.selected-language-box {
+    max-width: 1050px;
+    margin: 35px auto 0;
+    padding: 25px 30px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.selected-label {
+    font-size: 13px;
+    opacity: 0.6;
+}
+
+.selected-language-box h3 {
+    margin: 5px 0 0;
+    font-size: 25px;
+}
+
+.primary-button {
+    border: none;
+    border-radius: 12px;
+    padding: 14px 22px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   LEARNING MODES
+========================================== */
+
+.learning-modes {
+    padding: 80px 8%;
+}
+
+.mode-grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.mode-card {
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.25s ease;
+}
+
+.mode-card:hover {
+    transform: translateY(-4px);
+}
+
+.mode-icon {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.mode-card h3 {
+    margin-bottom: 10px;
+}
+
+.mode-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.65;
+}
+
+
+/* ==========================================
+   OFFLINE BANNER
+========================================== */
+
+.offline-banner {
+    max-width: 1050px;
+    margin: 30px auto 90px;
+    padding: 30px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.offline-icon {
+    min-width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.offline-banner h3 {
+    margin: 0 0 8px;
+}
+
+.offline-banner p {
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.65;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 850px) {
+
+    .mode-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .language-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .selected-language-box {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-button {
+        width: 100%;
+    }
+
+    .mode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offline-banner {
+        margin-left: 8%;
+        margin-right: 8%;
+        align-items: flex-start;
+    }
+
+}
