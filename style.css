@@ -1088,3 +1088,315 @@ section {
     }
 
 }
+
+/* ==========================================
+   LESSONS PAGE
+========================================== */
+
+.lessons-hero {
+    padding: 90px 8% 60px;
+    text-align: center;
+}
+
+.lessons-hero-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.lessons-hero h1 {
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.1;
+    margin: 15px 0 20px;
+}
+
+.lessons-hero h1 span {
+    display: block;
+}
+
+.lessons-hero p {
+    max-width: 680px;
+    margin: auto;
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.72;
+}
+
+
+/* ==========================================
+   CURRENT LANGUAGE
+========================================== */
+
+.current-language {
+    padding: 20px 8% 60px;
+}
+
+.current-language-card {
+    max-width: 1050px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.current-language-card h2 {
+    margin: 5px 0 8px;
+    font-size: 30px;
+}
+
+.current-language-card p {
+    margin: 0;
+    max-width: 650px;
+    line-height: 1.6;
+    opacity: 0.65;
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: 13px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: inherit;
+    white-space: nowrap;
+}
+
+
+/* ==========================================
+   LESSON CATEGORIES
+========================================== */
+
+.lesson-section {
+    padding: 60px 8% 80px;
+}
+
+.category-grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    padding: 30px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.25s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.category-card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    opacity: 0.65;
+    min-height: 70px;
+}
+
+.category-button {
+    margin-top: 15px;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   AVAILABLE LESSONS
+========================================== */
+
+.available-lessons {
+    padding: 70px 8% 90px;
+}
+
+.lesson-grid {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.lesson-card {
+    padding: 25px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.25s ease;
+}
+
+.lesson-card:hover {
+    transform: translateY(-5px);
+}
+
+.lesson-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.lesson-type,
+.lesson-level {
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
+.lesson-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.lesson-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.lesson-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    opacity: 0.65;
+    min-height: 70px;
+}
+
+.lesson-meta {
+    display: flex;
+    gap: 15px;
+    margin: 18px 0;
+    font-size: 12px;
+    opacity: 0.65;
+}
+
+.lesson-button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    font-weight: 700;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.08);
+    transition: 0.2s ease;
+}
+
+.lesson-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   AI BANNER
+========================================== */
+
+.lesson-ai-banner {
+    max-width: 1050px;
+    margin: 20px auto 100px;
+    padding: 35px;
+    border-radius: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.lesson-ai-icon {
+    min-width: 60px;
+    height: 60px;
+    border-radius: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.lesson-ai-content h2 {
+    font-size: 28px;
+    max-width: 700px;
+    margin: 5px 0 12px;
+}
+
+.lesson-ai-content p {
+    max-width: 750px;
+    line-height: 1.7;
+    opacity: 0.65;
+    margin-bottom: 22px;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 850px) {
+
+    .category-grid,
+    .lesson-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .current-language-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .secondary-button {
+        text-align: center;
+    }
+
+    .category-grid,
+    .lesson-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-ai-banner {
+        margin-left: 8%;
+        margin-right: 8%;
+        flex-direction: column;
+    }
+
+    .lesson-ai-content h2 {
+        font-size: 24px;
+    }
+
+}
