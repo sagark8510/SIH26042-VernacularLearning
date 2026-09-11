@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lessons | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🧠 VernacularLearn
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="language.html">Languages</a>
+            <a href="lessons.html" class="active">Lessons</a>
+            <a href="ai-assistant.html">AI Assistant</a>
+        </nav>
+
+        <a href="ai-assistant.html" class="nav-button">
+            AI Assistant
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <!-- Hero -->
+
+        <section class="lessons-hero">
+
+            <div class="lessons-hero-content">
+
+                <span class="section-badge">
+                    📚 FLN Learning Hub
+                </span>
+
+                <h1>
+                    Learn in the
+                    <span>Language You Understand</span>
+                </h1>
+
+                <p>
+                    Explore primary-level lessons designed for
+                    foundational literacy and numeracy learning
+                    through mother-tongue support.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CURRENT LANGUAGE
+        ========================== -->
+
+        <section class="current-language">
+
+            <div class="current-language-card">
+
+                <div>
+                    <span class="small-label">
+                        Current Learning Language
+                    </span>
+
+                    <h2 id="currentLanguage">
+                        Santhali
+                    </h2>
+
+                    <p>
+                        Lessons will use Hindi as the teacher
+                        input language and provide mother-tongue
+                        learning support.
+                    </p>
+                </div>
+
+                <a
+                    href="language.html"
+                    class="secondary-button"
+                >
+                    Change Language
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LESSON CATEGORIES
+        ========================== -->
+
+        <section class="lesson-section">
+
+            <div class="section-heading">
+
+                <span class="small-label">
+                    Foundational Learning
+                </span>
+
+                <h2>
+                    Choose a Learning Area
+                </h2>
+
+                <p>
+                    Start with age-appropriate concepts aligned
+                    with foundational learning.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+                <!-- Literacy -->
+
+                <div class="category-card">
+
+                    <div class="category-icon">
+                        🔤
+                    </div>
+
+                    <h3>
+                        Foundational Literacy
+                    </h3>
+
+                    <p>
+                        Letters, sounds, words, reading and
+                        simple language activities.
+                    </p>
+
+                    <button
+                        onclick="filterLessons('literacy')"
+                        class="category-button"
+                    >
+                        Explore Literacy →
+                    </button>
+
+                </div>
+
+
+                <!-- Numeracy -->
+
+                <div class="category-card">
+
+                    <div class="category-icon">
+                        🔢
+                    </div>
+
+                    <h3>
+                        Foundational Numeracy
+                    </h3>
+
+                    <p>
+                        Numbers, counting, basic operations and
+                        simple mathematical thinking.
+                    </p>
+
+                    <button
+                        onclick="filterLessons('numeracy')"
+                        class="category-button"
+                    >
+                        Explore Numeracy →
+                    </button>
+
+                </div>
+
+
+                <!-- Environmental Learning -->
+
+                <div class="category-card">
+
+                    <div class="category-icon">
+                        🌱
+                    </div>
+
+                    <h3>
+                        Environmental Learning
+                    </h3>
+
+                    <p>
+                        Simple concepts about plants, animals,
+                        surroundings and everyday life.
+                    </p>
+
+                    <button
+                        onclick="filterLessons('environment')"
+                        class="category-button"
+                    >
+                        Explore Environment →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LESSON LIST
+        ========================== -->
+
+        <section class="available-lessons">
+
+            <div class="section-heading">
+
+                <span class="small-label">
+                    Sample Lessons
+                </span>
+
+                <h2>
+                    Recommended for You
+                </h2>
+
+                <p>
+                    Select a lesson to see how VernacularLearn
+                    can transform classroom content into
+                    mother-tongue learning material.
+                </p>
+
+            </div>
+
+
+            <div class="lesson-grid" id="lessonGrid">
+
+
+                <!-- Lesson 1 -->
+
+                <article
+                    class="lesson-card"
+                    data-category="literacy"
+                >
+
+                    <div class="lesson-top">
+
+                        <span class="lesson-type">
+                            Literacy
+                        </span>
+
+                        <span class="lesson-level">
+                            Level 1
+                        </span>
+
+                    </div>
+
+                    <div class="lesson-icon">
+                        🔤
+                    </div>
+
+                    <h3>
+                        Learning Letters
+                    </h3>
+
+                    <p>
+                        Recognise basic letters and connect
+                        sounds with familiar words.
+                    </p>
+
+                    <div class="lesson-meta">
+                        <span>⏱️ 15 min</span>
+                        <span>🎧 Audio</span>
+                    </div>
+
+                    <button
+                        class="lesson-button"
+                        onclick="openLesson('Learning Letters')"
+                    >
+                        Start Lesson →
+                    </button>
+
+                </article>
+
+
+                <!-- Lesson 2 -->
+
+                <article
+                    class="lesson-card"
+                    data-category="numeracy"
+                >
+
+                    <div class="lesson-top">
+
+                        <span class="lesson-type">
+                            Numeracy
+                        </span>
+
+                        <span class="lesson-level">
+                            Level 1
+                        </span>
+
+                    </div>
+
+                    <div class="lesson-icon">
+                        🔢
+                    </div>
+
+                    <h3>
+                        Counting Numbers
+                    </h3>
+
+                    <p>
+                        Learn to recognise, count and compare
+                        small numbers using familiar examples.
+                    </p>
+
+                    <div class="lesson-meta">
+                        <span>⏱️ 15 min</span>
+                        <span>📝 Practice</span>
+                    </div>
+
+                    <button
+                        class="lesson-button"
+                        onclick="openLesson('Counting Numbers')"
+                    >
+                        Start Lesson →
+                    </button>
+
+                </article>
+
+
+                <!-- Lesson 3 -->
+
+                <article
+                    class="lesson-card"
+                    data-category="environment"
+                >
+
+                    <div class="lesson-top">
+
+                        <span class="lesson-type">
+                            Environment
+                        </span>
+
+                        <span class="lesson-level">
+                            Level 1
+                        </span>
+
+                    </div>
+
+                    <div class="lesson-icon">
+                        🌱
+                    </div>
+
+                    <h3>
+                        Understanding Plants
+                    </h3>
+
+                    <p>
+                        Discover the basic parts of a plant and
+                        understand their everyday importance.
+                    </p>
+
+                    <div class="lesson-meta">
+                        <span>⏱️ 20 min</span>
+                        <span>🎧 Audio</span>
+                    </div>
+
+                    <button
+                        class="lesson-button"
+                        onclick="openLesson('Understanding Plants')"
+                    >
+                        Start Lesson →
+                    </button>
+
+                </article>
+
+
+                <!-- Lesson 4 -->
+
+                <article
+                    class="lesson-card"
+                    data-category="literacy"
+                >
+
+                    <div class="lesson-top">
+
+                        <span class="lesson-type">
+                            Literacy
+                        </span>
+
+                        <span class="lesson-level">
+                            Level 1
+                        </span>
+
+                    </div>
+
+                    <div class="lesson-icon">
+                        📖
+                    </div>
+
+                    <h3>
+                        Simple Words
+                    </h3>
+
+                    <p>
+                        Build simple words and practise reading
+                        through familiar classroom examples.
+                    </p>
+
+                    <div class="lesson-meta">
+                        <span>⏱️ 15 min</span>
+                        <span>📝 Practice</span>
+                    </div>
+
+                    <button
+                        class="lesson-button"
+                        onclick="openLesson('Simple Words')"
+                    >
+                        Start Lesson →
+                    </button>
+
+                </article>
+
+
+                <!-- Lesson 5 -->
+
+                <article
+                    class="lesson-card"
+                    data-category="numeracy"
+                >
+
+                    <div class="lesson-top">
+
+                        <span class="lesson-type">
+                            Numeracy
+                        </span>
+
+                        <span class="lesson-level">
+                            Level 1
+                        </span>
+
+                    </div>
+
+                    <div class="lesson-icon">
+                        ➕
+                    </div>
+
+                    <h3>
+                        Basic Addition
+                    </h3>
+
+                    <p>
+                        Understand simple addition using objects
+                        and familiar real-world examples.
+                    </p>
+
+                    <div class="lesson-meta">
+                        <span>⏱️ 20 min</span>
+                        <span>📝 Practice</span>
+                    </div>
+
+                    <button
+                        class="lesson-button"
+                        onclick="openLesson('Basic Addition')"
+                    >
+                        Start Lesson →
+                    </button>
+
+                </article>
+
+
+                <!-- Lesson 6 -->
+
+                <article
+                    class="lesson-card"
+                    data-category="environment"
+                >
+
+                    <div class="lesson-top">
+
+                        <span class="lesson-type">
+                            Environment
+                        </span>
+
+                        <span class="lesson-level">
+                            Level 1
+                        </span>
+
+                    </div>
+
+                    <div class="lesson-icon">
+                        🐦
+                    </div>
+
+                    <h3>
+                        Animals Around Us
+                    </h3>
+
+                    <p>
+                        Identify common animals and learn simple
+                        facts using familiar surroundings.
+                    </p>
+
+                    <div class="lesson-meta">
+                        <span>⏱️ 15 min</span>
+                        <span>🎧 Audio</span>
+                    </div>
+
+                    <button
+                        class="lesson-button"
+                        onclick="openLesson('Animals Around Us')"
+                    >
+                        Start Lesson →
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             AI TRANSLATION FEATURE
+        ========================== -->
+
+        <section class="lesson-ai-banner">
+
+            <div class="lesson-ai-icon">
+                🤖
+            </div>
+
+            <div class="lesson-ai-content">
+
+                <span class="small-label">
+                    AI-Powered Learning
+                </span>
+
+                <h2>
+                    Turn Hindi Teaching Content
+                    into Mother-Tongue Learning
+                </h2>
+
+                <p>
+                    Teachers can provide lesson scripts,
+                    activity instructions or assessment prompts.
+                    VernacularLearn is designed to convert them
+                    into contextually appropriate learning
+                    resources for the selected language.
+                </p>
+
+                <a
+                    href="ai-assistant.html"
+                    class="primary-button"
+                >
+                    Try AI Assistant →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+
+                <strong>
+                    🧠 VernacularLearn
+                </strong>
+
+                <p>
+                    AI-assisted mother-tongue learning
+                    for primary education.
+                </p>
+
+            </div>
+
+            <div>
+
+                <p>
+                    SIH26042 Prototype
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // ------------------------------------------
+        // Current Language
+        // ------------------------------------------
+
+        const savedLanguage =
+            localStorage.getItem("selectedLanguage");
+
+        if (savedLanguage) {
+
+            document
+                .getElementById("currentLanguage")
+                .textContent = savedLanguage;
+
+        }
+
+
+        // ------------------------------------------
+        // Filter Lessons
+        // ------------------------------------------
+
+        function filterLessons(category) {
+
+            const lessons =
+                document.querySelectorAll(".lesson-card");
+
+            lessons.forEach(function (lesson) {
+
+                const lessonCategory =
+                    lesson.getAttribute("data-category");
+
+                if (lessonCategory === category) {
+
+                    lesson.style.display = "block";
+
+                } else {
+
+                    lesson.style.display = "none";
+
+                }
+
+            });
+
+            document
+                .getElementById("lessonGrid")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+        }
+
+
+        // ------------------------------------------
+        // Open Lesson
+        // ------------------------------------------
+
+        function openLesson(lessonName) {
+
+            localStorage.setItem(
+                "selectedLesson",
+                lessonName
+            );
+
+            alert(
+                "Lesson selected: " +
+                lessonName +
+                "\n\nThe detailed lesson module will open here."
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
