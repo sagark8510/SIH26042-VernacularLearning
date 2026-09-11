@@ -598,15 +598,16 @@
            LISTEN DEMO
         ===================================== */
 
-        function playExplanation() {
+        function showTranslationInfo() {
 
-            alert(
-                "🔊 Audio Demo\n\n" +
-                "The selected lesson's mother-tongue audio will be played here."
-            );
+    localStorage.setItem(
+        "selectedLanguage",
+        selectedLanguage
+    );
+
+    window.location.href = "translator.html";
 
         }
-
 
         /* =====================================
            TRANSLATION DEMO
