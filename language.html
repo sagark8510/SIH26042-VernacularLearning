@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Choose Language | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🧠 VernacularLearn
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="language.html" class="active">Languages</a>
+            <a href="lessons.html">Lessons</a>
+            <a href="ai-assistant.html">AI Assistant</a>
+        </nav>
+
+        <a href="ai-assistant.html" class="nav-button">
+            AI Assistant
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         LANGUAGE HERO
+    ========================== -->
+
+    <main>
+
+        <section class="language-hero">
+
+            <div class="language-hero-content">
+
+                <span class="section-badge">
+                    🌍 Mother-Tongue Learning
+                </span>
+
+                <h1>
+                    Choose Your
+                    <span>Learning Language</span>
+                </h1>
+
+                <p>
+                    Select the language you want to use for lessons,
+                    explanations, activities and classroom learning.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LANGUAGE SELECTION
+        ========================== -->
+
+        <section class="language-section">
+
+            <div class="section-heading">
+
+                <span class="small-label">
+                    Available Languages
+                </span>
+
+                <h2>
+                    Select a Mother Tongue
+                </h2>
+
+                <p>
+                    Our prototype focuses on tribal languages used
+                    in Jharkhand's mother-tongue-based education.
+                </p>
+
+            </div>
+
+
+            <div class="language-grid">
+
+
+                <!-- SANTHALI -->
+
+                <button
+                    class="language-card selected"
+                    data-language="Santhali"
+                    onclick="selectLanguage('Santhali')"
+                >
+
+                    <div class="language-icon">
+                        🟢
+                    </div>
+
+                    <div class="language-info">
+
+                        <h3>Santhali</h3>
+
+                        <p>
+                            Primary prototype language
+                        </p>
+
+                        <span class="language-status">
+                            ✓ Available
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <!-- HO -->
+
+                <button
+                    class="language-card"
+                    data-language="Ho"
+                    onclick="selectLanguage('Ho')"
+                >
+
+                    <div class="language-icon">
+                        🔵
+                    </div>
+
+                    <div class="language-info">
+
+                        <h3>Ho</h3>
+
+                        <p>
+                            Tribal language support
+                        </p>
+
+                        <span class="language-status coming">
+                            Coming Soon
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <!-- MUNDARI -->
+
+                <button
+                    class="language-card"
+                    data-language="Mundari"
+                    onclick="selectLanguage('Mundari')"
+                >
+
+                    <div class="language-icon">
+                        🟣
+                    </div>
+
+                    <div class="language-info">
+
+                        <h3>Mundari</h3>
+
+                        <p>
+                            Tribal language support
+                        </p>
+
+                        <span class="language-status coming">
+                            Coming Soon
+                        </span>
+
+                    </div>
+
+                </button>
+
+
+                <!-- HINDI -->
+
+                <button
+                    class="language-card"
+                    data-language="Hindi"
+                    onclick="selectLanguage('Hindi')"
+                >
+
+                    <div class="language-icon">
+                        🟠
+                    </div>
+
+                    <div class="language-info">
+
+                        <h3>Hindi</h3>
+
+                        <p>
+                            Teacher input language
+                        </p>
+
+                        <span class="language-status">
+                            ✓ Available
+                        </span>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 SELECTED LANGUAGE
+            ========================== -->
+
+            <div class="selected-language-box">
+
+                <div>
+
+                    <span class="selected-label">
+                        Selected Language
+                    </span>
+
+                    <h3 id="selectedLanguage">
+                        Santhali
+                    </h3>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    onclick="continueLearning()"
+                >
+                    Continue Learning →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LEARNING MODES
+        ========================== -->
+
+        <section class="learning-modes">
+
+            <div class="section-heading">
+
+                <span class="small-label">
+                    Learning Modes
+                </span>
+
+                <h2>
+                    How Do You Want to Learn?
+                </h2>
+
+            </div>
+
+
+            <div class="mode-grid">
+
+                <div class="mode-card">
+
+                    <div class="mode-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        Lessons
+                    </h3>
+
+                    <p>
+                        Learn FLN concepts through
+                        mother-tongue explanations.
+                    </p>
+
+                </div>
+
+
+                <div class="mode-card">
+
+                    <div class="mode-icon">
+                        🎙️
+                    </div>
+
+                    <h3>
+                        Voice Learning
+                    </h3>
+
+                    <p>
+                        Listen to translated explanations
+                        and classroom instructions.
+                    </p>
+
+                </div>
+
+
+                <div class="mode-card">
+
+                    <div class="mode-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        AI Assistant
+                    </h3>
+
+                    <p>
+                        Ask questions and receive
+                        simple learning assistance.
+                    </p>
+
+                </div>
+
+
+                <div class="mode-card">
+
+                    <div class="mode-icon">
+                        📝
+                    </div>
+
+                    <h3>
+                        Practice
+                    </h3>
+
+                    <p>
+                        Practice concepts using
+                        activities and assessments.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             OFFLINE FEATURE
+        ========================== -->
+
+        <section class="offline-banner">
+
+            <div class="offline-icon">
+                📱
+            </div>
+
+            <div>
+
+                <h3>
+                    Designed for Low-Connectivity Schools
+                </h3>
+
+                <p>
+                    VernacularLearn follows an offline-first approach
+                    so learning resources can remain available even
+                    when internet connectivity is limited.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+                <strong>🧠 VernacularLearn</strong>
+                <p>
+                    AI-assisted mother-tongue learning
+                    for primary education.
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    SIH26042 Prototype
+                </p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         PAGE JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        let selectedLanguage = "Santhali";
+
+
+        function selectLanguage(language) {
+
+            selectedLanguage = language;
+
+            document
+                .getElementById("selectedLanguage")
+                .textContent = language;
+
+
+            const cards =
+                document.querySelectorAll(".language-card");
+
+
+            cards.forEach(function(card) {
+
+                card.classList.remove("selected");
+
+                if (
+                    card.getAttribute("data-language")
+                    === language
+                ) {
+
+                    card.classList.add("selected");
+
+                }
+
+            });
+
+
+            localStorage.setItem(
+                "selectedLanguage",
+                language
+            );
+
+        }
+
+
+        function continueLearning() {
+
+            localStorage.setItem(
+                "selectedLanguage",
+                selectedLanguage
+            );
+
+            window.location.href =
+                "lessons.html";
+
+        }
+
+
+        // Load previously selected language
+
+        const savedLanguage =
+            localStorage.getItem("selectedLanguage");
+
+
+        if (savedLanguage) {
+
+            selectLanguage(savedLanguage);
+
+        }
+
+    </script>
+
+</body>
+</html>
