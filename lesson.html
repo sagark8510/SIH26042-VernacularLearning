@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lesson | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🧠 VernacularLearn
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="language.html">Languages</a>
+            <a href="lessons.html" class="active">Lessons</a>
+            <a href="ai-assistant.html">AI Assistant</a>
+        </nav>
+
+        <a href="lessons.html" class="nav-button">
+            ← Lessons
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         LESSON HEADER
+    ========================== -->
+
+    <main>
+
+        <section class="lesson-view-hero">
+
+            <div class="lesson-view-content">
+
+                <span class="section-badge">
+                    🌱 FLN Lesson
+                </span>
+
+                <h1 id="lessonTitle">
+                    Understanding Plants
+                </h1>
+
+                <p>
+                    Learn the concept through simple explanations,
+                    mother-tongue support and interactive activities.
+                </p>
+
+                <div class="lesson-view-meta">
+                    <span>📚 Level 1</span>
+                    <span>⏱️ 20 minutes</span>
+                    <span id="lessonLanguage">Santhali</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LESSON CONTENT
+        ========================== -->
+
+        <section class="lesson-content-section">
+
+            <div class="lesson-content-grid">
+
+
+                <!-- Hindi Content -->
+
+                <article class="content-panel">
+
+                    <div class="content-panel-header">
+
+                        <span>🇮🇳 Teacher Input</span>
+
+                        <span class="content-tag">
+                            Hindi
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        पौधों को समझना
+                    </h2>
+
+                    <p>
+                        पौधे हमारे आसपास पाए जाते हैं। पौधों के
+                        अलग-अलग भाग होते हैं, जैसे जड़, तना, पत्तियाँ
+                        और फूल।
+                    </p>
+
+                    <p>
+                        जड़ पौधे को मिट्टी में मजबूती से पकड़कर रखती है
+                        और मिट्टी से पानी तथा खनिज प्राप्त करने में
+                        सहायता करती है।
+                    </p>
+
+                    <p>
+                        पत्तियाँ पौधे के लिए भोजन बनाने में महत्वपूर्ण
+                        भूमिका निभाती हैं।
+                    </p>
+
+                </article>
+
+
+                <!-- Mother Tongue -->
+
+                <article class="content-panel mother-tongue-panel">
+
+                    <div class="content-panel-header">
+
+                        <span>🗣️ Mother-Tongue Explanation</span>
+
+                        <span class="content-tag">
+                            Santhali
+                        </span>
+
+                    </div>
+
+                    <h2>
+                        Simple Explanation
+                    </h2>
+
+                    <p id="translatedText">
+                        This prototype demonstrates how Hindi
+                        teaching content can be presented with
+                        mother-tongue learning support.
+                    </p>
+
+                    <div class="translation-note">
+
+                        <span>🤖 AI Translation Layer</span>
+
+                        <p>
+                            Context-aware translation is designed
+                            to preserve the meaning of classroom
+                            content rather than translating words
+                            mechanically.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- =========================
+                 AUDIO / TRANSLATION
+            ========================== -->
+
+            <div class="lesson-tools">
+
+                <button
+                    class="lesson-tool-button"
+                    onclick="playExplanation()"
+                >
+                    🔊 Listen to Explanation
+                </button>
+
+                <button
+                    class="lesson-tool-button"
+                    onclick="showTranslationInfo()"
+                >
+                    🔁 Translation
+                </button>
+
+                <button
+                    class="lesson-tool-button"
+                    onclick="startVoiceDemo()"
+                >
+                    🎙️ Voice Translation
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 ACTIVITY
+            ========================== -->
+
+            <section class="activity-card">
+
+                <div class="activity-header">
+
+                    <span class="small-label">
+                        Quick Activity
+                    </span>
+
+                    <h2>
+                        Check Your Understanding
+                    </h2>
+
+                </div>
+
+                <p>
+                    Which part of a plant helps it take water
+                    and minerals from the soil?
+                </p>
+
+                <div class="answer-options">
+
+                    <button onclick="checkAnswer(this, false)">
+                        🌸 Flower
+                    </button>
+
+                    <button onclick="checkAnswer(this, true)">
+                        🌱 Root
+                    </button>
+
+                    <button onclick="checkAnswer(this, false)">
+                        🍃 Leaf
+                    </button>
+
+                    <button onclick="checkAnswer(this, false)">
+                        🌿 Stem
+                    </button>
+
+                </div>
+
+                <div
+                    id="answerResult"
+                    class="answer-result"
+                ></div>
+
+            </section>
+
+
+            <!-- =========================
+                 NEXT STEPS
+            ========================== -->
+
+            <section class="lesson-next-section">
+
+                <div>
+
+                    <span class="small-label">
+                        Continue Learning
+                    </span>
+
+                    <h2>
+                        Ready for the next activity?
+                    </h2>
+
+                    <p>
+                        Generate practice material and
+                        continue learning in your selected language.
+                    </p>
+
+                </div>
+
+                <div class="lesson-next-buttons">
+
+                    <a
+                        href="ai-assistant.html"
+                        class="primary-button"
+                    >
+                        🤖 Ask AI
+                    </a>
+
+                    <a
+                        href="lessons.html"
+                        class="secondary-button"
+                    >
+                        More Lessons
+                    </a>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <div>
+                <strong>
+                    🧠 VernacularLearn
+                </strong>
+
+                <p>
+                    AI-assisted mother-tongue learning
+                    for primary education.
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    SIH26042 Prototype
+                </p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const savedLanguage =
+            localStorage.getItem("selectedLanguage");
+
+        if (savedLanguage) {
+
+            document.getElementById("lessonLanguage")
+                .textContent = "🗣️ " + savedLanguage;
+
+        }
+
+
+        const savedLesson =
+            localStorage.getItem("selectedLesson");
+
+        if (savedLesson) {
+
+            document.getElementById("lessonTitle")
+                .textContent = savedLesson;
+
+        }
+
+
+        function playExplanation() {
+
+            alert(
+                "🔊 Audio Demo\n\n" +
+                "This prototype will play the translated " +
+                "mother-tongue explanation here."
+            );
+
+        }
+
+
+        function showTranslationInfo() {
+
+            alert(
+                "🔁 Translation Layer\n\n" +
+                "Hindi classroom content → " +
+                "context-aware mother-tongue output."
+            );
+
+        }
+
+
+        function startVoiceDemo() {
+
+            alert(
+                "🎙️ Voice Translation Demo\n\n" +
+                "Teacher Hindi speech → " +
+                "mother-tongue text and voice."
+            );
+
+        }
+
+
+        function checkAnswer(button, correct) {
+
+            const result =
+                document.getElementById("answerResult");
+
+            if (correct) {
+
+                result.textContent =
+                    "✅ Correct! Roots help the plant absorb water and minerals from the soil.";
+
+                result.className =
+                    "answer-result correct";
+
+            } else {
+
+                result.textContent =
+                    "❌ Not quite. Try again!";
+
+                result.className =
+                    "answer-result wrong";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
