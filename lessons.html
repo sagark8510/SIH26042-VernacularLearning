@@ -670,16 +670,12 @@
 
         function openLesson(lessonName) {
 
-            localStorage.setItem(
-                "selectedLesson",
-                lessonName
-            );
+    localStorage.setItem(
+        "selectedLesson",
+        lessonName
+    );
 
-            alert(
-                "Lesson selected: " +
-                lessonName +
-                "\n\nThe detailed lesson module will open here."
-            );
+    window.location.href = "lesson.html";
 
         }
 
