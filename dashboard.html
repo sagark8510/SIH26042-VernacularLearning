@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🧠 VernacularLearn
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="language.html">Languages</a>
+
+        <a href="lessons.html">Lessons</a>
+
+        <a href="translator.html">Translator</a>
+
+        <a href="ai-assistant.html">AI Assistant</a>
+
+        <a href="practice.html">Practice</a>
+
+        <a href="progress.html">Progress</a>
+
+        <a href="dashboard.html" class="active">
+            Dashboard
+        </a>
+
+    </div>
+
+    <a href="lessons.html" class="nav-button">
+        Open Platform
+    </a>
+
+</nav>
+
+
+<!-- ================= DASHBOARD HERO ================= -->
+
+<section class="dashboard-hero">
+
+    <div class="dashboard-hero-content">
+
+        <div>
+
+            <span class="hero-badge">
+                🏫 Teacher Dashboard
+            </span>
+
+            <h1>
+                Welcome to VernacularLearn
+            </h1>
+
+            <p>
+                Manage learning content, monitor student
+                progress and support mother-tongue education.
+            </p>
+
+        </div>
+
+        <div class="dashboard-date">
+
+            <span>
+                Today
+            </span>
+
+            <strong id="todayDate">
+                --
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUICK STATS ================= -->
+
+<section class="dashboard-section">
+
+    <div class="dashboard-stat-grid">
+
+        <div class="dashboard-stat-card">
+
+            <div class="dashboard-stat-icon">
+                👨‍🎓
+            </div>
+
+            <div>
+
+                <span>
+                    Active Students
+                </span>
+
+                <strong>
+                    128
+                </strong>
+
+                <small>
+                    +12 this month
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-stat-card">
+
+            <div class="dashboard-stat-icon">
+                📚
+            </div>
+
+            <div>
+
+                <span>
+                    Lessons Available
+                </span>
+
+                <strong>
+                    24
+                </strong>
+
+                <small>
+                    FLN aligned
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-stat-card">
+
+            <div class="dashboard-stat-icon">
+                📝
+            </div>
+
+            <div>
+
+                <span>
+                    Practice Attempts
+                </span>
+
+                <strong>
+                    342
+                </strong>
+
+                <small>
+                    This month
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-stat-card">
+
+            <div class="dashboard-stat-icon">
+                🌐
+            </div>
+
+            <div>
+
+                <span>
+                    Learning Language
+                </span>
+
+                <strong id="dashboardLanguage">
+                    Santhali
+                </strong>
+
+                <small>
+                    Prototype language
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN DASHBOARD ================= -->
+
+<section class="dashboard-main">
+
+    <div class="dashboard-main-container">
+
+
+        <!-- ================= LEFT COLUMN ================= -->
+
+        <div class="dashboard-column">
+
+
+            <!-- Learning Activity -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <div>
+
+                        <span>
+                            Platform Activity
+                        </span>
+
+                        <h2>
+                            Learning Overview
+                        </h2>
+
+                    </div>
+
+                    <span class="live-status">
+                        ● Active
+                    </span>
+
+                </div>
+
+
+                <div class="dashboard-activity-grid">
+
+                    <div class="activity-summary">
+
+                        <span>
+                            Lessons completed
+                        </span>
+
+                        <strong>
+                            486
+                        </strong>
+
+                    </div>
+
+
+                    <div class="activity-summary">
+
+                        <span>
+                            Worksheets created
+                        </span>
+
+                        <strong>
+                            174
+                        </strong>
+
+                    </div>
+
+
+                    <div class="activity-summary">
+
+                        <span>
+                            AI questions
+                        </span>
+
+                        <strong>
+                            219
+                        </strong>
+
+                    </div>
+
+
+                    <div class="activity-summary">
+
+                        <span>
+                            Flashcard sessions
+                        </span>
+
+                        <strong>
+                            301
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Student Progress -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <div>
+
+                        <span>
+                            Student Performance
+                        </span>
+
+                        <h2>
+                            Recent Learners
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-list">
+
+                    <div class="student-row">
+
+                        <div class="student-avatar">
+                            A
+                        </div>
+
+                        <div class="student-details">
+
+                            <strong>
+                                Student A
+                            </strong>
+
+                            <span>
+                                Plants • Practice
+                            </span>
+
+                        </div>
+
+                        <div class="student-score">
+                            90%
+                        </div>
+
+                    </div>
+
+
+                    <div class="student-row">
+
+                        <div class="student-avatar">
+                            R
+                        </div>
+
+                        <div class="student-details">
+
+                            <strong>
+                                Student B
+                            </strong>
+
+                            <span>
+                                Numbers • Practice
+                            </span>
+
+                        </div>
+
+                        <div class="student-score">
+                            84%
+                        </div>
+
+                    </div>
+
+
+                    <div class="student-row">
+
+                        <div class="student-avatar">
+                            S
+                        </div>
+
+                        <div class="student-details">
+
+                            <strong>
+                                Student C
+                            </strong>
+
+                            <span>
+                                Animals • Lesson
+                            </span>
+
+                        </div>
+
+                        <div class="student-score">
+                            78%
+                        </div>
+
+                    </div>
+
+
+                    <div class="student-row">
+
+                        <div class="student-avatar">
+                            M
+                        </div>
+
+                        <div class="student-details">
+
+                            <strong>
+                                Student D
+                            </strong>
+
+                            <span>
+                                Letters • Flashcards
+                            </span>
+
+                        </div>
+
+                        <div class="student-score">
+                            92%
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Quick Actions -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <div>
+
+                        <span>
+                            Quick Actions
+                        </span>
+
+                        <h2>
+                            Teaching Tools
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-action-grid">
+
+                    <a
+                        href="translator.html"
+                        class="dashboard-action">
+
+                        <span>
+                            🔄
+                        </span>
+
+                        <strong>
+                            Translate
+                        </strong>
+
+                        <small>
+                            Hindi → Mother Tongue
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        href="worksheet.html"
+                        class="dashboard-action">
+
+                        <span>
+                            📄
+                        </span>
+
+                        <strong>
+                            Worksheet
+                        </strong>
+
+                        <small>
+                            Create learning sheet
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        href="flashcards.html"
+                        class="dashboard-action">
+
+                        <span>
+                            🃏
+                        </span>
+
+                        <strong>
+                            Flashcards
+                        </strong>
+
+                        <small>
+                            Visual learning
+                        </small>
+
+                    </a>
+
+
+                    <a
+                        href="ai-assistant.html"
+                        class="dashboard-action">
+
+                        <span>
+                            🤖
+                        </span>
+
+                        <strong>
+                            AI Assistant
+                        </strong>
+
+                        <small>
+                            Ask learning questions
+                        </small>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= RIGHT COLUMN ================= -->
+
+        <div class="dashboard-column">
+
+
+            <!-- Language -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <div>
+
+                        <span>
+                            Mother-Tongue Support
+                        </span>
+
+                        <h2>
+                            Language Status
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="language-status-list">
+
+                    <div class="language-status-row">
+
+                        <div>
+
+                            <strong>
+                                Santhali
+                            </strong>
+
+                            <span>
+                                Prototype support
+                            </span>
+
+                        </div>
+
+                        <span class="status-available">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <div class="language-status-row">
+
+                        <div>
+
+                            <strong>
+                                Ho
+                            </strong>
+
+                            <span>
+                                Future integration
+                            </span>
+
+                        </div>
+
+                        <span class="status-coming">
+                            Coming Soon
+                        </span>
+
+                    </div>
+
+
+                    <div class="language-status-row">
+
+                        <div>
+
+                            <strong>
+                                Mundari
+                            </strong>
+
+                            <span>
+                                Future integration
+                            </span>
+
+                        </div>
+
+                        <span class="status-coming">
+                            Coming Soon
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FLN Areas -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <div>
+
+                        <span>
+                            Curriculum Coverage
+                        </span>
+
+                        <h2>
+                            FLN Learning Areas
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="fln-list">
+
+                    <div class="fln-item">
+
+                        <div class="fln-top">
+
+                            <span>
+                                Foundational Literacy
+                            </span>
+
+                            <strong>
+                                82%
+                            </strong>
+
+                        </div>
+
+                        <div class="fln-progress">
+
+                            <div
+                                style="width:82%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fln-item">
+
+                        <div class="fln-top">
+
+                            <span>
+                                Foundational Numeracy
+                            </span>
+
+                            <strong>
+                                74%
+                            </strong>
+
+                        </div>
+
+                        <div class="fln-progress">
+
+                            <div
+                                style="width:74%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="fln-item">
+
+                        <div class="fln-top">
+
+                            <span>
+                                Environmental Learning
+                            </span>
+
+                            <strong>
+                                68%
+                            </strong>
+
+                        </div>
+
+                        <div class="fln-progress">
+
+                            <div
+                                style="width:68%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- System Features -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-card-header">
+
+                    <div>
+
+                        <span>
+                            System
+                        </span>
+
+                        <h2>
+                            Platform Readiness
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="readiness-list">
+
+                    <div class="readiness-item">
+
+                        <span>
+                            📱 Low-end device support
+                        </span>
+
+                        <strong>
+                            Ready
+                        </strong>
+
+                    </div>
+
+
+                    <div class="readiness-item">
+
+                        <span>
+                            📴 Offline-first design
+                        </span>
+
+                        <strong>
+                            Ready
+                        </strong>
+
+                    </div>
+
+
+                    <div class="readiness-item">
+
+                        <span>
+                            🤖 AI assistant
+                        </span>
+
+                        <strong>
+                            Demo
+                        </strong>
+
+                    </div>
+
+
+                    <div class="readiness-item">
+
+                        <span>
+                            🎙️ Voice translation
+                        </span>
+
+                        <strong>
+                            Demo
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Offline -->
+
+            <div class="offline-dashboard-card">
+
+                <div class="offline-dashboard-icon">
+                    📴
+                </div>
+
+                <div>
+
+                    <strong>
+                        Offline Learning Mode
+                    </strong>
+
+                    <p>
+                        Core learning content is designed
+                        for low-connectivity school environments.
+                    </p>
+
+                    <span>
+                        Prototype mode
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTICE ================= -->
+
+<section class="dashboard-notice">
+
+    <strong>
+        Prototype Dashboard
+    </strong>
+
+    <p>
+        The statistics and learner records shown here
+        are demonstration data. In the complete system,
+        these values would be connected to secure student,
+        assessment and learning databases.
+    </p>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div>
+        🧠 <strong>VernacularLearn</strong>
+    </div>
+
+    <p>
+        AI-Powered Vernacular Pedagogy Prototype
+    </p>
+
+    <small>
+        SIH26042 • Smart Education
+    </small>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const savedLanguage =
+    localStorage.getItem("selectedLanguage");
+
+if (savedLanguage) {
+
+    document.getElementById("dashboardLanguage")
+        .textContent = savedLanguage;
+
+}
+
+
+/* Current date */
+
+const today = new Date();
+
+const dateText =
+    today.toLocaleDateString(
+        "en-IN",
+        {
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        }
+    );
+
+document.getElementById("todayDate")
+    .textContent = dateText;
+
+</script>
+
+</body>
+  </html>
