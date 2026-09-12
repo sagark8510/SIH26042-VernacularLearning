@@ -2691,3 +2691,486 @@ section {
     }
 
    }
+
+/* ==========================================
+   VOICE LEARNING PAGE
+   SIH26042 - VernacularLearn
+   ========================================== */
+
+.voice-hero {
+    padding: 90px 20px 70px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #eef8ff,
+        #f8fbff
+    );
+}
+
+.voice-hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.voice-badge {
+    display: inline-block;
+    padding: 9px 18px;
+    border-radius: 30px;
+    background: #e4f2ff;
+    color: #1769aa;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.voice-hero h1 {
+    font-size: 48px;
+    line-height: 1.15;
+    color: #172033;
+    margin-bottom: 20px;
+}
+
+.voice-hero h1 span {
+    color: #1976d2;
+}
+
+.voice-hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #667085;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   VOICE MAIN AREA
+   ========================================== */
+
+.voice-section {
+    padding: 70px 20px;
+    background: #ffffff;
+}
+
+.voice-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 130px 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* ==========================================
+   VOICE CARDS
+   ========================================== */
+
+.voice-card {
+    padding: 28px;
+    border: 1px solid #e0e7ef;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 10px 35px rgba(20, 40, 70, 0.08);
+}
+
+.voice-card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.voice-person-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+    background: #edf6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.voice-card-top span {
+    font-size: 12px;
+    color: #7a8699;
+}
+
+.voice-card-top h2 {
+    margin: 4px 0 0;
+    font-size: 20px;
+    color: #172033;
+}
+
+.voice-language {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #f1f5f9;
+    color: #475467;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.speech-box {
+    min-height: 120px;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f8fbff;
+    border: 1px solid #e3ebf3;
+    margin-bottom: 18px;
+}
+
+.speech-box p {
+    margin: 0;
+    color: #344054;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+.record-button,
+.listen-button {
+    width: 100%;
+    border: none;
+    border-radius: 11px;
+    padding: 13px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.record-button {
+    background: #1976d2;
+    color: #ffffff;
+}
+
+.listen-button {
+    background: #eaf4ff;
+    color: #1769aa;
+}
+
+.record-button:hover,
+.listen-button:hover {
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   CONNECTION
+   ========================================== */
+
+.voice-connection {
+    text-align: center;
+    color: #667085;
+}
+
+.connection-line {
+    width: 2px;
+    height: 70px;
+    margin: auto;
+    background: #d7e3ef;
+}
+
+.translation-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f3ff;
+    color: #1976d2;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.voice-connection p {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   INTERACTIVE DEMO
+   ========================================== */
+
+.voice-demo-section {
+    padding: 70px 20px;
+    background: #f8fafc;
+}
+
+.voice-demo-container {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.voice-demo-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.small-label {
+    color: #1976d2;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.voice-demo-heading h2 {
+    margin: 10px 0;
+    font-size: 30px;
+    color: #172033;
+}
+
+.voice-demo-heading p {
+    color: #667085;
+}
+
+
+/* ==========================================
+   PHRASES
+   ========================================== */
+
+.phrase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.phrase-grid button {
+    border: 1px solid #dce5ef;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: left;
+    cursor: pointer;
+    color: #344054;
+    font-size: 14px;
+}
+
+.phrase-grid button:hover {
+    border-color: #1976d2;
+    background: #f1f8ff;
+}
+
+
+/* ==========================================
+   FLOW RESULT
+   ========================================== */
+
+.voice-flow-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e0e7ef;
+}
+
+.flow-step {
+    text-align: center;
+    max-width: 180px;
+}
+
+.flow-step span {
+    width: 38px;
+    height: 38px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eaf4ff;
+    color: #1976d2;
+    font-weight: 800;
+}
+
+.flow-step strong {
+    display: block;
+    color: #172033;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.flow-step p {
+    margin: 0;
+    color: #7a8699;
+    font-size: 12px;
+}
+
+.flow-arrow {
+    font-size: 25px;
+    color: #9aa8b8;
+}
+
+
+/* ==========================================
+   FEATURES
+   ========================================== */
+
+.voice-features-section {
+    padding: 65px 20px;
+    background: #ffffff;
+}
+
+.voice-features-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.voice-feature {
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    background: #ffffff;
+}
+
+.voice-feature > div {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.voice-feature h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    color: #172033;
+}
+
+.voice-feature p {
+    margin: 0;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   NOTICE
+   ========================================== */
+
+.voice-notice {
+    padding: 25px 20px;
+    background: #fff9e8;
+    border-top: 1px solid #f1dfaa;
+    border-bottom: 1px solid #f1dfaa;
+}
+
+.voice-notice-content {
+    max-width: 1050px;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.notice-icon {
+    font-size: 30px;
+}
+
+.voice-notice h2 {
+    margin: 0 0 6px;
+    color: #594700;
+    font-size: 18px;
+}
+
+.voice-notice p {
+    margin: 0;
+    color: #705d1c;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .voice-container {
+        grid-template-columns: 1fr;
+    }
+
+    .voice-connection {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .connection-line {
+        width: 60px;
+        height: 2px;
+    }
+
+    .translation-icon {
+        margin: 0;
+    }
+
+    .voice-connection p {
+        margin: 0;
+    }
+
+    .voice-features-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .voice-hero {
+        padding: 65px 18px 50px;
+    }
+
+    .voice-hero h1 {
+        font-size: 34px;
+    }
+
+    .voice-hero p {
+        font-size: 15px;
+    }
+
+    .voice-section {
+        padding: 45px 14px;
+    }
+
+    .voice-card {
+        padding: 20px;
+    }
+
+    .phrase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .voice-flow-result {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .voice-features-container {
+        grid-template-columns: 1fr;
+    }
+
+    .voice-notice-content {
+        flex-direction: column;
+    }
+
+}
