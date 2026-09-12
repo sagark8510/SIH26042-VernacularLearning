@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voice Learning | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🧠 VernacularLearn
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="language.html">Languages</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="translator.html">Translator</a>
+        <a href="ai-assistant.html">AI Assistant</a>
+        <a href="voice-learning.html" class="active">Voice Learning</a>
+    </nav>
+
+    <a href="lessons.html" class="nav-button">
+        📚 Lessons
+    </a>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="voice-hero">
+
+    <div class="voice-hero-content">
+
+        <span class="voice-badge">
+            🎤 Voice-Based Learning
+        </span>
+
+        <h1>
+            Speak. Translate.<br>
+            <span>Learn Together.</span>
+        </h1>
+
+        <p>
+            A voice interaction prototype that helps teachers
+            communicate with students through Hindi and their
+            preferred mother tongue.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<section class="voice-section">
+
+    <div class="voice-container">
+
+        <!-- TEACHER -->
+
+        <div class="voice-card teacher-card">
+
+            <div class="voice-card-top">
+
+                <div class="voice-person-icon">
+                    👩‍🏫
+                </div>
+
+                <div>
+                    <span>Teacher</span>
+                    <h2>Hindi Input</h2>
+                </div>
+
+            </div>
+
+            <div class="voice-language">
+                🇮🇳 Hindi
+            </div>
+
+            <div class="speech-box">
+
+                <p id="teacherText">
+                    Hello children! Today we will learn
+                    about plants.
+                </p>
+
+            </div>
+
+            <button
+                class="record-button"
+                onclick="startTeacherVoice()"
+                id="teacherButton"
+            >
+                🎤 Speak Hindi
+            </button>
+
+        </div>
+
+
+        <!-- TRANSLATION -->
+
+        <div class="voice-connection">
+
+            <div class="connection-line"></div>
+
+            <div class="translation-icon">
+                ⇄
+            </div>
+
+            <p>
+                AI Voice<br>
+                Translation
+            </p>
+
+        </div>
+
+
+        <!-- STUDENT -->
+
+        <div class="voice-card student-card">
+
+            <div class="voice-card-top">
+
+                <div class="voice-person-icon">
+                    👧
+                </div>
+
+                <div>
+                    <span>Student</span>
+                    <h2 id="targetLanguage">
+                        Santhali
+                    </h2>
+                </div>
+
+            </div>
+
+            <div class="voice-language" id="targetLanguageBadge">
+                🌐 Santhali
+            </div>
+
+            <div class="speech-box">
+
+                <p id="studentText">
+                    Mother-tongue audio output will
+                    appear here.
+                </p>
+
+            </div>
+
+            <button
+                class="listen-button"
+                onclick="playStudentVoice()"
+            >
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LIVE DEMO ================= -->
+
+<section class="voice-demo-section">
+
+    <div class="voice-demo-container">
+
+        <div class="voice-demo-heading">
+
+            <span class="small-label">
+                INTERACTIVE DEMO
+            </span>
+
+            <h2>
+                Classroom Voice Interaction
+            </h2>
+
+            <p>
+                Select a classroom phrase and simulate
+                the Hindi-to-mother-tongue communication flow.
+            </p>
+
+        </div>
+
+
+        <div class="phrase-grid">
+
+            <button
+                onclick="selectPhrase('Good morning children!')"
+            >
+                Good morning children!
+            </button>
+
+            <button
+                onclick="selectPhrase('Open your book.')"
+            >
+                Open your book.
+            </button>
+
+            <button
+                onclick="selectPhrase('Look at the plant.')"
+            >
+                Look at the plant.
+            </button>
+
+            <button
+                onclick="selectPhrase('How many leaves can you see?')"
+            >
+                How many leaves can you see?
+            </button>
+
+        </div>
+
+
+        <div class="voice-flow-result" id="voiceResult">
+
+            <div class="flow-step">
+                <span>1</span>
+                <strong>Teacher speaks</strong>
+                <p>Hindi voice input</p>
+            </div>
+
+            <div class="flow-arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                <span>2</span>
+                <strong>AI processes</strong>
+                <p>Translation engine</p>
+            </div>
+
+            <div class="flow-arrow">
+                →
+            </div>
+
+            <div class="flow-step">
+                <span>3</span>
+                <strong>Student hears</strong>
+                <p>Mother-tongue output</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="voice-features-section">
+
+    <div class="voice-features-container">
+
+        <div class="voice-feature">
+
+            <div>🎤</div>
+
+            <h3>Speech Input</h3>
+
+            <p>
+                Teachers can speak naturally instead of
+                typing every classroom instruction.
+            </p>
+
+        </div>
+
+
+        <div class="voice-feature">
+
+            <div>🔄</div>
+
+            <h3>Voice Translation</h3>
+
+            <p>
+                Hindi classroom communication can be
+                converted into the selected mother tongue.
+            </p>
+
+        </div>
+
+
+        <div class="voice-feature">
+
+            <div>🔊</div>
+
+            <h3>Audio Output</h3>
+
+            <p>
+                Students can receive translated instructions
+                through audio.
+            </p>
+
+        </div>
+
+
+        <div class="voice-feature">
+
+            <div>📱</div>
+
+            <h3>Low-Connectivity Ready</h3>
+
+            <p>
+                Designed with an offline-first architecture
+                for low-resource schools.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTICE ================= -->
+
+<section class="voice-notice">
+
+    <div class="voice-notice-content">
+
+        <div class="notice-icon">
+            🧪
+        </div>
+
+        <div>
+
+            <h2>
+                Prototype Voice Engine
+            </h2>
+
+            <p>
+                This prototype demonstrates the classroom
+                voice interaction flow. Actual speech recognition,
+                tribal-language translation and synthesized audio
+                can be connected through a secure offline-capable
+                AI/NLP engine in the final implementation.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                🧠 VernacularLearn
+            </h3>
+
+            <p>
+                AI-assisted mother-tongue learning
+                for primary education.
+            </p>
+
+        </div>
+
+        <div>
+
+            <p>
+                SIH26042 Prototype
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const savedLanguage =
+    localStorage.getItem("selectedLanguage");
+
+
+if (savedLanguage) {
+
+    document.getElementById("targetLanguage")
+        .textContent = savedLanguage;
+
+    document.getElementById("targetLanguageBadge")
+        .textContent = "🌐 " + savedLanguage;
+
+}
+
+
+/* ================= TEACHER VOICE ================= */
+
+function startTeacherVoice() {
+
+    const button =
+        document.getElementById("teacherButton");
+
+    button.textContent =
+        "🎙️ Listening...";
+
+    setTimeout(function () {
+
+        button.textContent =
+            "🎤 Speak Hindi";
+
+        alert(
+            "🎤 Voice Input Demo\n\n" +
+            "In the final implementation, the teacher's " +
+            "Hindi speech will be converted into text and " +
+            "sent to the translation engine."
+        );
+
+    }, 1200);
+
+}
+
+
+/* ================= STUDENT AUDIO ================= */
+
+function playStudentVoice() {
+
+    alert(
+        "🔊 Audio Output Demo\n\n" +
+        "In the final implementation, the translated " +
+        "mother-tongue text will be converted into " +
+        "speech for the student."
+    );
+
+}
+
+
+/* ================= PHRASE ================= */
+
+function selectPhrase(phrase) {
+
+    document.getElementById("teacherText")
+        .textContent = phrase;
+
+    document.getElementById("studentText")
+        .textContent =
+        "Translated mother-tongue output will appear here.";
+
+    document.getElementById("voiceResult")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+}
+
+
+/* ================= INITIALIZATION ================= */
+
+console.log(
+    "VernacularLearn Voice Learning initialized."
+);
+
+</script>
+
+</body>
+</html>
