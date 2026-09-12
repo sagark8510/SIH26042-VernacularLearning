@@ -3174,3 +3174,438 @@ section {
     }
 
 }
+
+/* ==========================================
+   WORKSHEET GENERATOR
+   SIH26042 - VernacularLearn
+   ========================================== */
+
+.worksheet-hero {
+    padding: 90px 20px 70px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #f0f8ff,
+        #f9fcff
+    );
+}
+
+.worksheet-hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.worksheet-badge {
+    display: inline-block;
+    padding: 9px 18px;
+    border-radius: 30px;
+    background: #e5f2ff;
+    color: #1769aa;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.worksheet-hero h1 {
+    font-size: 46px;
+    line-height: 1.15;
+    color: #172033;
+    margin-bottom: 20px;
+}
+
+.worksheet-hero h1 span {
+    color: #1976d2;
+}
+
+.worksheet-hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #667085;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   MAIN
+   ========================================== */
+
+.worksheet-section {
+    padding: 70px 20px;
+    background: #f8fafc;
+}
+
+.worksheet-container {
+    max-width: 1150px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 330px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* ==========================================
+   SETTINGS
+   ========================================== */
+
+.worksheet-settings {
+    background: #ffffff;
+    border: 1px solid #e1e8f0;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(20, 40, 70, 0.06);
+    position: sticky;
+    top: 20px;
+}
+
+.worksheet-settings h2 {
+    margin-top: 0;
+    color: #172033;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.setting-group {
+    margin-bottom: 20px;
+}
+
+.setting-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #344054;
+    margin-bottom: 8px;
+}
+
+.setting-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #d6dee8;
+    background: #ffffff;
+    font-size: 14px;
+    color: #344054;
+    outline: none;
+}
+
+.setting-group select:focus {
+    border-color: #1976d2;
+}
+
+.generate-worksheet-button {
+    width: 100%;
+    border: none;
+    border-radius: 11px;
+    padding: 14px;
+    background: #1976d2;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.generate-worksheet-button:hover {
+    opacity: 0.9;
+}
+
+
+/* ==========================================
+   PREVIEW
+   ========================================== */
+
+.worksheet-preview {
+    min-width: 0;
+}
+
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.preview-header span:first-child {
+    font-size: 11px;
+    font-weight: 800;
+    color: #1976d2;
+    letter-spacing: 1px;
+}
+
+.preview-header h2 {
+    margin: 5px 0 0;
+    color: #172033;
+    font-size: 24px;
+}
+
+.preview-language {
+    background: #eaf4ff;
+    color: #1769aa;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   PAPER
+   ========================================== */
+
+.worksheet-paper {
+    background: #ffffff;
+    min-height: 650px;
+    padding: 45px;
+    border-radius: 8px;
+    box-shadow: 0 12px 35px rgba(20, 40, 70, 0.09);
+    border: 1px solid #e5e7eb;
+}
+
+.paper-header {
+    text-align: center;
+}
+
+.paper-header h1 {
+    margin: 0;
+    color: #172033;
+    font-size: 27px;
+}
+
+.paper-header p {
+    color: #667085;
+    margin: 6px 0;
+    font-size: 13px;
+}
+
+.paper-line {
+    height: 2px;
+    background: #dce5ef;
+    margin: 20px 0;
+}
+
+.student-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #344054;
+    margin-bottom: 30px;
+}
+
+.paper-topic {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.paper-topic span {
+    font-size: 11px;
+    color: #7a8699;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.paper-topic h2 {
+    margin: 6px 0 0;
+    color: #1976d2;
+    font-size: 22px;
+}
+
+.worksheet-question {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    column-gap: 8px;
+}
+
+.worksheet-question strong {
+    color: #1976d2;
+}
+
+.worksheet-question p {
+    margin: 0;
+    color: #344054;
+    line-height: 1.6;
+}
+
+.answer-line {
+    grid-column: 2;
+    height: 32px;
+    border-bottom: 1px solid #cbd5e1;
+    margin-top: 10px;
+}
+
+.matching-box {
+    grid-column: 2;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    line-height: 2;
+    color: #475467;
+}
+
+.paper-footer {
+    margin-top: 50px;
+    padding-top: 15px;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    color: #98a2b3;
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   PREVIEW ACTIONS
+   ========================================== */
+
+.preview-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.preview-actions button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 17px;
+    background: #1976d2;
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.preview-actions button:last-child {
+    background: #344054;
+}
+
+
+/* ==========================================
+   INFO CARDS
+   ========================================== */
+
+.worksheet-info {
+    padding: 65px 20px;
+    background: #ffffff;
+}
+
+.worksheet-info-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.worksheet-info-card {
+    padding: 25px;
+    border: 1px solid #e1e8f0;
+    border-radius: 16px;
+}
+
+.worksheet-info-card > div {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.worksheet-info-card h3 {
+    margin: 0 0 8px;
+    color: #172033;
+    font-size: 16px;
+}
+
+.worksheet-info-card p {
+    margin: 0;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   NOTICE
+   ========================================== */
+
+.worksheet-notice {
+    padding: 25px 20px;
+    background: #fff9e8;
+    border-top: 1px solid #f0dfaa;
+    border-bottom: 1px solid #f0dfaa;
+}
+
+.worksheet-notice > div {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.worksheet-notice strong {
+    color: #594700;
+}
+
+.worksheet-notice p {
+    margin: 7px 0 0;
+    color: #705d1c;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .worksheet-container {
+        grid-template-columns: 1fr;
+    }
+
+    .worksheet-settings {
+        position: static;
+    }
+
+    .worksheet-info-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .worksheet-hero {
+        padding: 65px 18px 50px;
+    }
+
+    .worksheet-hero h1 {
+        font-size: 34px;
+    }
+
+    .worksheet-hero p {
+        font-size: 15px;
+    }
+
+    .worksheet-section {
+        padding: 45px 14px;
+    }
+
+    .worksheet-paper {
+        padding: 25px 18px;
+    }
+
+    .student-details {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .preview-header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .preview-actions {
+        flex-direction: column;
+    }
+
+    .preview-actions button {
+        width: 100%;
+    }
+
+}
