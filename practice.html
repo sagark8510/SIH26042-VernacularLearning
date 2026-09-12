@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Practice | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🧠 VernacularLearn
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="language.html">Languages</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="translator.html">Translator</a>
+        <a href="ai-assistant.html">AI Assistant</a>
+        <a href="practice.html" class="active">Practice</a>
+    </div>
+
+    <a href="lessons.html" class="nav-button">
+        Lessons
+    </a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="practice-hero">
+
+    <div class="practice-hero-content">
+
+        <span class="hero-badge">
+            📝 AI-Assisted Practice
+        </span>
+
+        <h1>
+            Practice What You Learn
+        </h1>
+
+        <p>
+            Test your understanding with simple,
+            curriculum-aligned questions and instant feedback.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRACTICE SETUP ================= -->
+
+<section class="practice-section">
+
+    <div class="section-heading">
+
+        <span>Practice Mode</span>
+
+        <h2>
+            Choose Your Practice Topic
+        </h2>
+
+        <p>
+            Select a topic and start a short learning assessment.
+        </p>
+
+    </div>
+
+
+    <div class="practice-topic-grid">
+
+        <button
+            class="practice-topic-card"
+            onclick="startPractice('Plants')">
+
+            <div class="practice-topic-icon">
+                🌱
+            </div>
+
+            <h3>
+                Plants
+            </h3>
+
+            <p>
+                Learn about roots, leaves,
+                flowers and sunlight.
+            </p>
+
+        </button>
+
+
+        <button
+            class="practice-topic-card"
+            onclick="startPractice('Numbers')">
+
+            <div class="practice-topic-icon">
+                🔢
+            </div>
+
+            <h3>
+                Numbers
+            </h3>
+
+            <p>
+                Practice counting and
+                basic number concepts.
+            </p>
+
+        </button>
+
+
+        <button
+            class="practice-topic-card"
+            onclick="startPractice('Animals')">
+
+            <div class="practice-topic-icon">
+                🐘
+            </div>
+
+            <h3>
+                Animals
+            </h3>
+
+            <p>
+                Identify common animals
+                and their features.
+            </p>
+
+        </button>
+
+
+        <button
+            class="practice-topic-card"
+            onclick="startPractice('Letters')">
+
+            <div class="practice-topic-icon">
+                🔤
+            </div>
+
+            <h3>
+                Letters
+            </h3>
+
+            <p>
+                Practice basic alphabet
+                recognition.
+            </p>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUIZ AREA ================= -->
+
+<section class="quiz-section" id="quizSection">
+
+    <div class="quiz-container">
+
+        <div class="quiz-header">
+
+            <div>
+
+                <span class="quiz-label">
+                    Current Practice
+                </span>
+
+                <h2 id="quizTopic">
+                    Plants
+                </h2>
+
+            </div>
+
+            <div class="quiz-language">
+                Language:
+                <strong id="quizLanguage">
+                    Santhali
+                </strong>
+            </div>
+
+        </div>
+
+
+        <!-- Progress -->
+
+        <div class="quiz-progress-area">
+
+            <div class="quiz-progress-text">
+
+                <span id="questionNumber">
+                    Question 1 of 5
+                </span>
+
+                <span id="scoreText">
+                    Score: 0
+                </span>
+
+            </div>
+
+            <div class="quiz-progress">
+
+                <div
+                    class="quiz-progress-bar"
+                    id="quizProgressBar">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Question -->
+
+        <div class="question-card">
+
+            <span class="question-tag">
+                Question
+            </span>
+
+            <h3 id="questionText">
+                Which part of a plant takes water
+                and minerals from the soil?
+            </h3>
+
+
+            <div
+                class="quiz-options"
+                id="quizOptions">
+            </div>
+
+
+            <div
+                class="quiz-feedback"
+                id="quizFeedback">
+            </div>
+
+
+            <button
+                class="next-question-button"
+                id="nextButton"
+                onclick="nextQuestion()"
+                style="display:none;">
+
+                Next Question →
+                
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="practice-features">
+
+    <div class="section-heading">
+
+        <span>Learning Support</span>
+
+        <h2>
+            More Than Just a Test
+        </h2>
+
+    </div>
+
+
+    <div class="practice-feature-grid">
+
+        <div class="practice-feature-card">
+
+            <div class="practice-feature-icon">
+                ⚡
+            </div>
+
+            <h3>
+                Instant Feedback
+            </h3>
+
+            <p>
+                Students immediately know whether
+                their answer is correct.
+            </p>
+
+        </div>
+
+
+        <div class="practice-feature-card">
+
+            <div class="practice-feature-icon">
+                💡
+            </div>
+
+            <h3>
+                Simple Explanations
+            </h3>
+
+            <p>
+                Each question can provide a simple
+                explanation after answering.
+            </p>
+
+        </div>
+
+
+        <div class="practice-feature-card">
+
+            <div class="practice-feature-icon">
+                📊
+            </div>
+
+            <h3>
+                Learning Progress
+            </h3>
+
+            <p>
+                Practice results can later be connected
+                to the student's progress dashboard.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROTOTYPE NOTICE ================= -->
+
+<section class="practice-notice">
+
+    <div>
+
+        <strong>
+            Prototype Assessment Engine
+        </strong>
+
+        <p>
+            This prototype uses a predefined question
+            set. A future AI assessment engine can
+            generate questions automatically from
+            uploaded curriculum content.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div>
+        🧠 <strong>VernacularLearn</strong>
+    </div>
+
+    <p>
+        AI-Powered Vernacular Pedagogy Prototype
+    </p>
+
+    <small>
+        SIH26042 • Smart Education
+    </small>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const savedLanguage =
+    localStorage.getItem("selectedLanguage") || "Santhali";
+
+document.getElementById("quizLanguage")
+    .textContent = savedLanguage;
+
+
+const questionSets = {
+
+    Plants: [
+
+        {
+            question:
+                "Which part of a plant takes water and minerals from the soil?",
+
+            options: [
+                "Flower",
+                "Root",
+                "Leaf",
+                "Fruit"
+            ],
+
+            answer: 1,
+
+            explanation:
+                "Roots absorb water and minerals from the soil."
+        },
+
+        {
+            question:
+                "Which part of a plant usually makes food?",
+
+            options: [
+                "Leaf",
+                "Root",
+                "Flower",
+                "Seed"
+            ],
+
+            answer: 0,
+
+            explanation:
+                "Leaves use sunlight to help the plant make food."
+        },
+
+        {
+            question:
+                "Which part of a plant can develop into a fruit?",
+
+            options: [
+                "Flower",
+                "Root",
+                "Stem",
+                "Leaf"
+            ],
+
+            answer: 0,
+
+            explanation:
+                "In many flowering plants, the flower develops into a fruit."
+        },
+
+        {
+            question:
+                "What does a plant need sunlight for?",
+
+            options: [
+                "Making food",
+                "Making soil",
+                "Making stones",
+                "Making water"
+            ],
+
+            answer: 0,
+
+            explanation:
+                "Plants use sunlight as an energy source to make food."
+        },
+
+        {
+            question:
+                "Which part supports the plant and carries water upward?",
+
+            options: [
+                "Stem",
+                "Flower",
+                "Fruit",
+                "Seed"
+            ],
+
+            answer: 0,
+
+            explanation:
+                "The stem supports the plant and helps transport water."
+        }
+
+    ],
+
+
+    Numbers: [
+
+        {
+            question:
+                "What number comes after 4?",
+
+            options: [
+                "3",
+                "5",
+                "6",
+                "2"
+            ],
+
+            answer: 1,
+
+            explanation:
+                "Counting after 4 gives 5."
+        },
+
+        {
+            question:
+                "How many fingers are there on one hand?",
+
+            options: [
+                "3",
+                "4",
+                "5",
+                "6"
+            ],
+
+            answer: 2,
+
+            explanation:
+                "One hand has five fingers."
+        },
+
+        {
+            question:
+                "What is 2 + 3?",
+
+            options: [
+                "4",
+                "5",
+                "6",
+                "7"
+            ],
+
+            answer: 1,
+
+            explanation:
+                "Adding 2 and 3 gives 5."
+        },
+
+        {
+            question:
+                "Which number is smaller?",
+
+            options: [
+                "2",
+                "5",
+                "8",
+                "9"
+            ],
+
+            answer: 0,
+
+            explanation:
+                "2 is smaller than 5, 8 and 9."
+        },
+
+        {
+            question:
+                "What number comes before 5?",
+
+            options: [
+                "3",
+                "4",
+                "6",
+                "7"
+            ],
+
+            answer: 1,
+
+            explanation:
+                "The number immediately before 5 is 4."
+        }
+
+    ],
+
+
+    Animals: [
+
+        {
+            question:
+                "Which animal gives us milk?",
+
+            options: [
+                "Cow",
+                "Lion",
+                "Tiger",
+                "Eagle"
+            ],
+
+            answer: 0,
+
+            explanation:
+                "Cows are commonly kept for milk."
+        },
+
+        {
+            question:
+                "Which animal is known for having a trunk?",
+
+            options: [
+                "Dog",
+                "Elephant",
+                "Cat",
+                "Goat"
+            ],
+
+            answer: 1,
+
+            explanation:
+                "An elephant has a long trunk."
+        },
+
+        {
+            question:
+                "Which animal can fly?",
+
+            options: [
+                "Fish",
+                "Bird",
+                "Cow",
+                "Horse"
+            ],
+
+            answer: 1,
+
+            explanation:
+                "Birds are animals that can fly."
+        },
+
+        {
+            question:
+                "Which animal lives in water?",
+
+            options: [
+                "Fish",
+                "Dog",
+                "Cow",
+                "Horse"
+            ],
+
+            answer: 0,
+
+            explanation:
+                "Fish live in water."
+        },
+
+        {
+            question:
+                "Which animal is commonly kept as a pet?",
+
+            options: [
+                "Dog",
+                "Tiger",
+                "Lion",
+                "Elephant"
+            ],
+
+            answer: 0,
+
+            explanation:
+                "Dogs are commonly kept as companion animals."
+        }
+
+    ],
+
+
+    Letters: [
+
+        {
+            question:
+                "Which letter comes first in the English alphabet?",
+
+            options: [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+
+            answer: 0,
+
+            explanation:
+                "A is the first letter of the English alphabet."
+        },
+
+        {
+            question:
+                "Which letter comes after B?",
+
+            options: [
+                "A",
+                "C",
+                "D",
+                "E"
+            ],
+
+            answer: 1,
+
+            explanation:
+                "C comes immediately after B."
+        },
+
+        {
+            question:
+                "Which letter comes before D?",
+
+            options: [
+                "A",
+                "B",
+                "C",
+                "E"
+            ],
+
+            answer: 2,
+
+            explanation:
+                "C comes immediately before D."
+        },
+
+        {
+            question:
+                "Which is a vowel?",
+
+            options: [
+                "B",
+                "C",
+                "A",
+                "D"
+            ],
+
+            answer: 2,
+
+            explanation:
+                "A is one of the vowels in English."
+        },
+
+        {
+            question:
+                "Which letter comes after D?",
+
+            options: [
+                "C",
+                "E",
+                "F",
+                "B"
+            ],
+
+            answer: 1,
+
+            explanation:
+                "E comes immediately after D."
+        }
+
+    ]
+
+};
+
+
+let currentTopic = "Plants";
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+function startPractice(topic) {
+
+    currentTopic = topic;
+    currentQuestion = 0;
+    score = 0;
+    answered = false;
+
+    document.getElementById("quizSection")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+    loadQuestion();
+}
+
+
+function loadQuestion() {
+
+    const questions =
+        questionSets[currentTopic];
+
+    const question =
+        questions[currentQuestion];
+
+    document.getElementById("quizTopic")
+        .textContent = currentTopic;
+
+    document.getElementById("questionNumber")
+        .textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " of " +
+        questions.length;
+
+    document.getElementById("scoreText")
+        .textContent =
+        "Score: " + score;
+
+    document.getElementById("questionText")
+        .textContent = question.question;
+
+
+    const optionsContainer =
+        document.getElementById("quizOptions");
+
+    optionsContainer.innerHTML = "";
+
+    question.options.forEach(
+        function(option, index) {
+
+            const button =
+                document.createElement("button");
+
+            button.textContent = option;
+
+            button.onclick = function() {
+
+                checkAnswer(index);
+
+            };
+
+            optionsContainer.appendChild(button);
+
+        }
+    );
+
+
+    document.getElementById("quizFeedback")
+        .textContent = "";
+
+    document.getElementById("quizFeedback")
+        .className = "quiz-feedback";
+
+
+    document.getElementById("nextButton")
+        .style.display = "none";
+
+
+    answered = false;
+
+
+    const progress =
+        ((currentQuestion + 1) /
+        questions.length) * 100;
+
+    document.getElementById("quizProgressBar")
+        .style.width = progress + "%";
+
+}
+
+
+function checkAnswer(selectedIndex) {
+
+    if (answered) return;
+
+    answered = true;
+
+    const questions =
+        questionSets[currentTopic];
+
+    const question =
+        questions[currentQuestion];
+
+    const optionButtons =
+        document.querySelectorAll(
+            "#quizOptions button"
+        );
+
+
+    optionButtons.forEach(
+        function(button) {
+
+            button.disabled = true;
+
+        }
+    );
+
+
+    const feedback =
+        document.getElementById("quizFeedback");
+
+
+    if (selectedIndex === question.answer) {
+
+        score++;
+
+        optionButtons[selectedIndex]
+            .classList.add("correct");
+
+        feedback.textContent =
+            "✓ Correct! " +
+            question.explanation;
+
+        feedback.classList.add("correct-feedback");
+
+    } else {
+
+        optionButtons[selectedIndex]
+            .classList.add("wrong");
+
+        optionButtons[question.answer]
+            .classList.add("correct");
+
+        feedback.textContent =
+            "Not quite. " +
+            question.explanation;
+
+        feedback.classList.add("wrong-feedback");
+
+    }
+
+
+    document.getElementById("scoreText")
+        .textContent =
+        "Score: " + score;
+
+
+    document.getElementById("nextButton")
+        .style.display = "inline-block";
+
+}
+
+
+function nextQuestion() {
+
+    const questions =
+        questionSets[currentTopic];
+
+    currentQuestion++;
+
+
+    if (currentQuestion >= questions.length) {
+
+        showFinalResult();
+
+        return;
+
+    }
+
+
+    loadQuestion();
+
+}
+
+
+function showFinalResult() {
+
+    const questions =
+        questionSets[currentTopic];
+
+    const percentage =
+        Math.round(
+            (score / questions.length) * 100
+        );
+
+
+    document.getElementById("questionText")
+        .textContent =
+        "Practice Complete!";
+
+    document.getElementById("quizOptions")
+        .innerHTML =
+        "<div class='final-score'>" +
+        score +
+        " / " +
+        questions.length +
+        " correct (" +
+        percentage +
+        "%)" +
+        "</div>";
+
+
+    document.getElementById("quizFeedback")
+        .textContent =
+        "Your practice result can be connected to the progress dashboard in the next module.";
+
+
+    document.getElementById("quizFeedback")
+        .className =
+        "quiz-feedback correct-feedback";
+
+
+    document.getElementById("nextButton")
+        .style.display = "none";
+
+
+    document.getElementById("quizProgressBar")
+        .style.width = "100%";
+
+
+    document.getElementById("questionNumber")
+        .textContent =
+        "Practice completed";
+
+}
+
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
