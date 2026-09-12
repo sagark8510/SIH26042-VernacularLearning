@@ -3,7 +3,7 @@
 // Offline Service Worker
 // ==========================================
 
-const CACHE_NAME = "vernacularlearn-v1";
+const CACHE_NAME = "vernacularlearn-v2";
 
 const APP_FILES = [
     "./",
@@ -19,6 +19,7 @@ const APP_FILES = [
     "./practice.html",
     "./progress.html",
     "./dashboard.html",
+    "./offline.html",
 
     "./style.css",
     "./app.js",
@@ -27,44 +28,63 @@ const APP_FILES = [
 ];
 
 
-// Install Service Worker
+// ==========================================
+// INSTALL
+// ==========================================
+
 self.addEventListener("install", function (event) {
 
     event.waitUntil(
+
         caches.open(CACHE_NAME)
             .then(function (cache) {
+
                 return cache.addAll(APP_FILES);
+
             })
+
     );
 
     self.skipWaiting();
 });
 
 
-// Activate Service Worker
+// ==========================================
+// ACTIVATE
+// ==========================================
+
 self.addEventListener("activate", function (event) {
 
     event.waitUntil(
+
         caches.keys().then(function (cacheNames) {
 
             return Promise.all(
+
                 cacheNames.map(function (cacheName) {
 
                     if (cacheName !== CACHE_NAME) {
+
                         return caches.delete(cacheName);
+
                     }
 
                 })
+
             );
 
         })
+
     );
 
     self.clients.claim();
 });
 
 
-// Fetch cached files when offline
+// ==========================================
+// FETCH
+// ==========================================
+
 self.addEventListener("fetch", function (event) {
 
     event.respondWith(
@@ -72,14 +92,20 @@ self.addEventListener("fetch", function (event) {
         caches.match(event.request)
             .then(function (cachedResponse) {
 
+                // If file is already cached
                 if (cachedResponse) {
+
                     return cachedResponse;
+
                 }
 
+                // Otherwise try internet
                 return fetch(event.request)
                     .catch(function () {
 
-                        return caches.match("./index.html");
+                        // If internet is unavailable,
+                        // show offline page
+                        return caches.match("./offline.html");
 
                     });
 
