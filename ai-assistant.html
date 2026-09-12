@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Assistant | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🧠 VernacularLearn
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="language.html">Languages</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="translator.html">Translator</a>
+        <a href="ai-assistant.html" class="active">AI Assistant</a>
+    </nav>
+
+    <a href="lessons.html" class="nav-button">
+        📚 Lessons
+    </a>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="ai-hero">
+
+    <div class="ai-hero-content">
+
+        <span class="ai-badge">
+            🤖 AI-Powered Learning Assistant
+        </span>
+
+        <h1>
+            Ask Anything.<br>
+            <span>Learn in Your Language.</span>
+        </h1>
+
+        <p>
+            Ask questions about your lesson and get simple,
+            teacher-friendly explanations designed for
+            primary-level learning.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ASSISTANT ================= -->
+
+<section class="ai-section">
+
+    <div class="ai-container">
+
+        <!-- LEFT SIDE -->
+
+        <div class="ai-chat-panel">
+
+            <div class="chat-header">
+
+                <div class="chat-title">
+                    <div class="ai-avatar">🤖</div>
+
+                    <div>
+                        <h2>Vernacular AI Assistant</h2>
+                        <p>
+                            Your learning companion
+                        </p>
+                    </div>
+                </div>
+
+                <span class="ai-status">
+                    ● Demo Mode
+                </span>
+
+            </div>
+
+
+            <!-- CHAT AREA -->
+
+            <div class="chat-area" id="chatArea">
+
+                <div class="message assistant-message">
+
+                    <div class="message-avatar">
+                        🤖
+                    </div>
+
+                    <div class="message-content">
+
+                        <strong>AI Assistant</strong>
+
+                        <p>
+                            Namaste! 👋
+                        </p>
+
+                        <p>
+                            I can help you understand your
+                            lessons in simple language.
+                        </p>
+
+                        <p>
+                            Try asking me something like:
+                            <b>“Plants ko paani kahan se milta hai?”</b>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <div class="chat-input-area">
+
+                <textarea
+                    id="userQuestion"
+                    placeholder="Ask your question in Hindi..."
+                    rows="2"
+                ></textarea>
+
+                <div class="input-actions">
+
+                    <button
+                        class="voice-input-button"
+                        onclick="voiceDemo()"
+                    >
+                        🎤 Speak
+                    </button>
+
+                    <button
+                        class="send-button"
+                        onclick="sendQuestion()"
+                    >
+                        Send ➤
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="ai-side-panel">
+
+            <!-- CURRENT LANGUAGE -->
+
+            <div class="ai-info-card">
+
+                <div class="info-icon">
+                    🌐
+                </div>
+
+                <div>
+                    <span>Learning Language</span>
+
+                    <h3 id="selectedLanguage">
+                        Santhali
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <!-- CURRENT LESSON -->
+
+            <div class="ai-info-card">
+
+                <div class="info-icon">
+                    📖
+                </div>
+
+                <div>
+                    <span>Current Lesson</span>
+
+                    <h3 id="selectedLesson">
+                        General Learning
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <!-- SUGGESTED QUESTIONS -->
+
+            <div class="suggested-card">
+
+                <h3>
+                    💡 Try asking
+                </h3>
+
+                <button onclick="askSuggestion(this)">
+                    Plants ko paani kahan se milta hai?
+                </button>
+
+                <button onclick="askSuggestion(this)">
+                    Addition kya hota hai?
+                </button>
+
+                <button onclick="askSuggestion(this)">
+                    Animals ke baare mein batao.
+                </button>
+
+                <button onclick="askSuggestion(this)">
+                    Alphabet kaise seekhein?
+                </button>
+
+            </div>
+
+
+            <!-- FEATURES -->
+
+            <div class="assistant-features">
+
+                <h3>
+                    ✨ Assistant Features
+                </h3>
+
+                <div class="feature-item">
+                    <span>💬</span>
+                    <p>Simple explanations</p>
+                </div>
+
+                <div class="feature-item">
+                    <span>🌐</span>
+                    <p>Mother-tongue learning support</p>
+                </div>
+
+                <div class="feature-item">
+                    <span>🎤</span>
+                    <p>Voice interaction</p>
+                </div>
+
+                <div class="feature-item">
+                    <span>📚</span>
+                    <p>Lesson-aware assistance</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEMO NOTICE ================= -->
+
+<section class="ai-demo-notice">
+
+    <div class="demo-content">
+
+        <div class="demo-icon">
+            🧪
+        </div>
+
+        <div>
+
+            <h2>Prototype AI Mode</h2>
+
+            <p>
+                This SIH26042 prototype currently uses
+                a simulated AI response engine for demonstration.
+                A secure AI/NLP backend can be connected later.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+            <h3>🧠 VernacularLearn</h3>
+
+            <p>
+                AI-assisted mother-tongue learning
+                for primary education.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                SIH26042 Prototype
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const savedLanguage =
+    localStorage.getItem("selectedLanguage");
+
+const savedLesson =
+    localStorage.getItem("selectedLesson");
+
+
+if (savedLanguage) {
+
+    document.getElementById("selectedLanguage")
+        .textContent = savedLanguage;
+
+}
+
+
+if (savedLesson) {
+
+    document.getElementById("selectedLesson")
+        .textContent = savedLesson;
+
+}
+
+
+/* ================= SEND QUESTION ================= */
+
+function sendQuestion() {
+
+    const input =
+        document.getElementById("userQuestion");
+
+    const question =
+        input.value.trim();
+
+    if (question === "") {
+
+        return;
+
+    }
+
+    addUserMessage(question);
+
+    input.value = "";
+
+    setTimeout(function () {
+
+        generateAIResponse(question);
+
+    }, 600);
+
+}
+
+
+/* ================= USER MESSAGE ================= */
+
+function addUserMessage(text) {
+
+    const chatArea =
+        document.getElementById("chatArea");
+
+    const message =
+        document.createElement("div");
+
+    message.className =
+        "message user-message";
+
+    message.innerHTML = `
+
+        <div class="message-content">
+
+            <strong>You</strong>
+
+            <p>${escapeHTML(text)}</p>
+
+        </div>
+
+        <div class="message-avatar">
+            👨‍🎓
+        </div>
+
+    `;
+
+    chatArea.appendChild(message);
+
+    scrollChat();
+
+}
+
+
+/* ================= AI RESPONSE ================= */
+
+function generateAIResponse(question) {
+
+    const lowerQuestion =
+        question.toLowerCase();
+
+    let answer = "";
+
+
+    if (
+        lowerQuestion.includes("plant") ||
+        lowerQuestion.includes("पौध") ||
+        lowerQuestion.includes("paani") ||
+        lowerQuestion.includes("पानी")
+    ) {
+
+        answer =
+        "Plants mainly absorb water and minerals from the soil through their roots. Roots also help anchor the plant in the soil.";
+
+    }
+
+    else if (
+        lowerQuestion.includes("addition") ||
+        lowerQuestion.includes("जोड़") ||
+        lowerQuestion.includes("jod")
+    ) {
+
+        answer =
+        "Addition means combining two or more numbers to find their total. For example, 2 and 3 together make 5.";
+
+    }
+
+    else if (
+        lowerQuestion.includes("animal") ||
+        lowerQuestion.includes("जानवर")
+    ) {
+
+        answer =
+        "Animals are living organisms. They need food, water and air to survive. Animals can live in different places such as forests, farms and water.";
+
+    }
+
+    else if (
+        lowerQuestion.includes("alphabet") ||
+        lowerQuestion.includes("letter") ||
+        lowerQuestion.includes("अक्षर")
+    ) {
+
+        answer =
+        "The alphabet is a set of letters used to form words. Learning letters step by step helps children read and write simple words.";
+
+    }
+
+    else if (
+        lowerQuestion.includes("hello") ||
+        lowerQuestion.includes("namaste") ||
+        lowerQuestion.includes("hi")
+    ) {
+
+        answer =
+        "Namaste! 👋 I am your learning assistant. Ask me about your lesson and I will try to explain it simply.";
+
+    }
+
+    else {
+
+        answer =
+        "This is a prototype AI response. In the final system, an AI/NLP engine can analyse the learner's question, understand the lesson context and provide a personalised explanation in the selected language.";
+
+    }
+
+
+    addAIMessage(answer);
+
+}
+
+
+/* ================= AI MESSAGE ================= */
+
+function addAIMessage(text) {
+
+    const chatArea =
+        document.getElementById("chatArea");
+
+    const message =
+        document.createElement("div");
+
+    message.className =
+        "message assistant-message";
+
+    message.innerHTML = `
+
+        <div class="message-avatar">
+            🤖
+        </div>
+
+        <div class="message-content">
+
+            <strong>AI Assistant</strong>
+
+            <p>${escapeHTML(text)}</p>
+
+        </div>
+
+    `;
+
+    chatArea.appendChild(message);
+
+    scrollChat();
+
+}
+
+
+/* ================= SUGGESTION ================= */
+
+function askSuggestion(button) {
+
+    const question =
+        button.textContent.trim();
+
+    document.getElementById("userQuestion")
+        .value = question;
+
+    sendQuestion();
+
+}
+
+
+/* ================= VOICE DEMO ================= */
+
+function voiceDemo() {
+
+    alert(
+        "🎤 Voice interaction demo\n\n" +
+        "In the final version, the teacher/student " +
+        "can speak a question and the system will " +
+        "convert speech into text before processing it."
+    );
+
+}
+
+
+/* ================= SCROLL ================= */
+
+function scrollChat() {
+
+    const chatArea =
+        document.getElementById("chatArea");
+
+    chatArea.scrollTop =
+        chatArea.scrollHeight;
+
+}
+
+
+/* ================= SECURITY ================= */
+
+function escapeHTML(text) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+</script>
+
+</body>
+  </html>
