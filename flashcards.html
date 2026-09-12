@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flashcards | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🧠 VernacularLearn
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="language.html">Languages</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="translator.html">Translator</a>
+        <a href="ai-assistant.html">AI Assistant</a>
+        <a href="flashcards.html" class="active">Flashcards</a>
+    </nav>
+
+    <a href="lessons.html" class="nav-button">
+        📚 Lessons
+    </a>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="flashcard-hero">
+
+    <div class="flashcard-hero-content">
+
+        <span class="flashcard-badge">
+            🃏 Visual Learning
+        </span>
+
+        <h1>
+            Learn Through<br>
+            <span>Interactive Flashcards.</span>
+        </h1>
+
+        <p>
+            Simple visual cards help primary learners
+            remember important concepts through repetition
+            and mother-tongue learning support.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN -->
+
+<section class="flashcard-section">
+
+    <div class="flashcard-container">
+
+        <div class="flashcard-controls">
+
+            <div>
+                <span class="small-label">
+                    CURRENT SET
+                </span>
+
+                <h2 id="flashcardTopic">
+                    Understanding Plants
+                </h2>
+            </div>
+
+            <div class="flashcard-language">
+                🌐 <span id="flashcardLanguage">
+                    Santhali
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- CARD -->
+
+        <div class="flashcard-area">
+
+            <button
+                class="card-nav previous"
+                onclick="previousCard()"
+            >
+                ←
+            </button>
+
+
+            <div
+                class="flashcard"
+                id="flashcard"
+                onclick="flipCard()"
+            >
+
+                <div class="flashcard-inner">
+
+                    <!-- FRONT -->
+
+                    <div class="flashcard-face flashcard-front">
+
+                        <div class="card-number">
+                            CARD <span id="cardNumber">1</span>
+                        </div>
+
+                        <div class="card-visual">
+                            🌱
+                        </div>
+
+                        <h2 id="cardFrontTitle">
+                            Plant
+                        </h2>
+
+                        <p>
+                            Tap the card to learn
+                        </p>
+
+                    </div>
+
+
+                    <!-- BACK -->
+
+                    <div class="flashcard-face flashcard-back">
+
+                        <div class="card-number">
+                            LEARN
+                        </div>
+
+                        <h2 id="cardBackTitle">
+                            Plant
+                        </h2>
+
+                        <p id="cardBackText">
+                            A plant is a living organism
+                            that grows and needs water,
+                            air and sunlight.
+                        </p>
+
+                        <div class="card-language-note">
+                            Mother-tongue explanation
+                            can be connected here.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="card-nav next"
+                onclick="nextCard()"
+            >
+                →
+            </button>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="card-progress">
+
+            <span id="cardProgressText">
+                1 of 5
+            </span>
+
+            <div class="card-progress-bar">
+
+                <div
+                    id="cardProgressFill"
+                    style="width:20%"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+
+        <div class="flashcard-actions">
+
+            <button
+                onclick="flipCard()"
+                class="flip-button"
+            >
+                🔄 Flip Card
+            </button>
+
+            <button
+                onclick="speakCard()"
+                class="speak-card-button"
+            >
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TOPICS -->
+
+<section class="flashcard-topics">
+
+    <div class="flashcard-topics-container">
+
+        <div class="topic-heading">
+
+            <span class="small-label">
+                PRACTICE SETS
+            </span>
+
+            <h2>
+                Explore More Topics
+            </h2>
+
+        </div>
+
+
+        <div class="topic-buttons">
+
+            <button onclick="loadTopic('plants')">
+                🌱 Plants
+            </button>
+
+            <button onclick="loadTopic('numbers')">
+                🔢 Numbers
+            </button>
+
+            <button onclick="loadTopic('animals')">
+                🐘 Animals
+            </button>
+
+            <button onclick="loadTopic('letters')">
+                🔤 Letters
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NOTICE -->
+
+<section class="flashcard-notice">
+
+    <div>
+
+        <strong>
+            🧪 Prototype Visual Learning
+        </strong>
+
+        <p>
+            This prototype uses predefined learning cards.
+            In the final system, AI can generate curriculum-aligned
+            bilingual flashcards from lesson content.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                🧠 VernacularLearn
+            </h3>
+
+            <p>
+                AI-assisted mother-tongue learning
+                for primary education.
+            </p>
+
+        </div>
+
+        <div>
+            <p>
+                SIH26042 Prototype
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   LANGUAGE
+   ========================================== */
+
+const savedLanguage =
+    localStorage.getItem("selectedLanguage");
+
+const savedLesson =
+    localStorage.getItem("selectedLesson");
+
+
+if (savedLanguage) {
+
+    document.getElementById("flashcardLanguage")
+        .textContent = savedLanguage;
+
+}
+
+
+/* ==========================================
+   FLASHCARD DATA
+   ========================================== */
+
+const cardSets = {
+
+    plants: {
+
+        topic: "Understanding Plants",
+
+        cards: [
+
+            {
+                icon: "🌱",
+                title: "Plant",
+                text:
+                    "A plant is a living organism that needs water, air and sunlight."
+            },
+
+            {
+                icon: "🌿",
+                title: "Root",
+                text:
+                    "Roots help anchor the plant and absorb water and minerals from the soil."
+            },
+
+            {
+                icon: "🍃",
+                title: "Leaf",
+                text:
+                    "Leaves help plants make food using sunlight."
+            },
+
+            {
+                icon: "🌸",
+                title: "Flower",
+                text:
+                    "Flowers are reproductive structures found in many plants."
+            },
+
+            {
+                icon: "☀️",
+                title: "Sunlight",
+                text:
+                    "Plants use sunlight as an important source of energy for making food."
+            }
+
+        ]
+
+    },
+
+
+    numbers: {
+
+        topic: "Counting Numbers",
+
+        cards: [
+
+            {
+                icon: "1️⃣",
+                title: "Number 1",
+                text:
+                    "One represents a single object."
+            },
+
+            {
+                icon: "2️⃣",
+                title: "Number 2",
+                text:
+                    "Two represents a pair of objects."
+            },
+
+            {
+                icon: "3️⃣",
+                title: "Number 3",
+                text:
+                    "Three means a group containing three objects."
+            },
+
+            {
+                icon: "4️⃣",
+                title: "Number 4",
+                text:
+                    "Four means a group containing four objects."
+            },
+
+            {
+                icon: "5️⃣",
+                title: "Number 5",
+                text:
+                    "Five means a group containing five objects."
+            }
+
+        ]
+
+    },
+
+
+    animals: {
+
+        topic: "Animals Around Us",
+
+        cards: [
+
+            {
+                icon: "🐄",
+                title: "Cow",
+                text:
+                    "A cow is a domesticated animal commonly kept on farms."
+            },
+
+            {
+                icon: "🐘",
+                title: "Elephant",
+                text:
+                    "An elephant is a large land animal with a trunk."
+            },
+
+            {
+                icon: "🐕",
+                title: "Dog",
+                text:
+                    "A dog is a domesticated animal often kept as a companion."
+            },
+
+            {
+                icon: "🐦",
+                title: "Bird",
+                text:
+                    "Birds are animals with feathers and beaks."
+            },
+
+            {
+                icon: "🐟",
+                title: "Fish",
+                text:
+                    "Fish are aquatic animals that live in water."
+            }
+
+        ]
+
+    },
+
+
+    letters: {
+
+        topic: "Learning Letters",
+
+        cards: [
+
+            {
+                icon: "🔤",
+                title: "A",
+                text:
+                    "A is the first letter of the English alphabet."
+            },
+
+            {
+                icon: "🔤",
+                title: "B",
+                text:
+                    "B is the second letter of the English alphabet."
+            },
+
+            {
+                icon: "🔤",
+                title: "C",
+                text:
+                    "C is the third letter of the English alphabet."
+            },
+
+            {
+                icon: "🔤",
+                title: "D",
+                text:
+                    "D is the fourth letter of the English alphabet."
+            },
+
+            {
+                icon: "🔤",
+                title: "E",
+                text:
+                    "E is the fifth letter of the English alphabet."
+            }
+
+        ]
+
+    }
+
+};
+
+
+let currentSet = cardSets.plants;
+
+let currentIndex = 0;
+
+let flipped = false;
+
+
+/* ==========================================
+   DISPLAY CARD
+   ========================================== */
+
+function displayCard() {
+
+    const card =
+        currentSet.cards[currentIndex];
+
+
+    document.getElementById("cardNumber")
+        .textContent = currentIndex + 1;
+
+
+    document.getElementById("cardFrontTitle")
+        .textContent = card.title;
+
+
+    document.getElementById("cardBackTitle")
+        .textContent = card.title;
+
+
+    document.getElementById("cardBackText")
+        .textContent = card.text;
+
+
+    document.querySelector(".card-visual")
+        .textContent = card.icon;
+
+
+    document.getElementById("flashcardTopic")
+        .textContent = currentSet.topic;
+
+
+    document.getElementById("cardProgressText")
+        .textContent =
+        (currentIndex + 1) +
+        " of " +
+        currentSet.cards.length;
+
+
+    const percentage =
+        ((currentIndex + 1) /
+        currentSet.cards.length) * 100;
+
+
+    document.getElementById("cardProgressFill")
+        .style.width =
+        percentage + "%";
+
+
+    if (flipped) {
+
+        flipCard();
+
+    }
+
+}
+
+
+/* ==========================================
+   FLIP
+   ========================================== */
+
+function flipCard() {
+
+    const card =
+        document.getElementById("flashcard");
+
+
+    card.classList.toggle("flipped");
+
+    flipped =
+        card.classList.contains("flipped");
+
+}
+
+
+/* ==========================================
+   NEXT
+   ========================================== */
+
+function nextCard() {
+
+    if (
+        currentIndex <
+        currentSet.cards.length - 1
+    ) {
+
+        currentIndex++;
+
+    } else {
+
+        currentIndex = 0;
+
+    }
+
+    resetFlip();
+
+    displayCard();
+
+}
+
+
+/* ==========================================
+   PREVIOUS
+   ========================================== */
+
+function previousCard() {
+
+    if (currentIndex > 0) {
+
+        currentIndex--;
+
+    } else {
+
+        currentIndex =
+            currentSet.cards.length - 1;
+
+    }
+
+    resetFlip();
+
+    displayCard();
+
+}
+
+
+/* ==========================================
+   RESET FLIP
+   ========================================== */
+
+function resetFlip() {
+
+    const card =
+        document.getElementById("flashcard");
+
+    card.classList.remove("flipped");
+
+    flipped = false;
+
+}
+
+
+/* ==========================================
+   LOAD TOPIC
+   ========================================== */
+
+function loadTopic(topic) {
+
+    currentSet =
+        cardSets[topic];
+
+    currentIndex = 0;
+
+    resetFlip();
+
+    displayCard();
+
+}
+
+
+/* ==========================================
+   SPEAK DEMO
+   ========================================== */
+
+function speakCard() {
+
+    const card =
+        currentSet.cards[currentIndex];
+
+
+    alert(
+        "🔊 Audio Demo\n\n" +
+        card.title +
+        "\n\n" +
+        "In the final implementation, " +
+        "this card can be converted into " +
+        "mother-tongue speech."
+    );
+
+}
+
+
+/* ==========================================
+   INITIALIZE
+   ========================================== */
+
+displayCard();
+
+</script>
+
+</body>
+  </html>
