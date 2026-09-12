@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Worksheet Generator | VernacularLearn</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🧠 VernacularLearn
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="language.html">Languages</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="translator.html">Translator</a>
+        <a href="ai-assistant.html">AI Assistant</a>
+        <a href="worksheet.html" class="active">Worksheet</a>
+    </nav>
+
+    <a href="lessons.html" class="nav-button">
+        📚 Lessons
+    </a>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="worksheet-hero">
+
+    <div class="worksheet-hero-content">
+
+        <span class="worksheet-badge">
+            📝 AI-Assisted Worksheet Generator
+        </span>
+
+        <h1>
+            Create Learning Worksheets<br>
+            <span>For Every Child.</span>
+        </h1>
+
+        <p>
+            Generate simple classroom worksheets based on
+            the selected lesson, learning level and language.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GENERATOR ================= -->
+
+<section class="worksheet-section">
+
+    <div class="worksheet-container">
+
+        <!-- SETTINGS -->
+
+        <div class="worksheet-settings">
+
+            <h2>⚙️ Worksheet Settings</h2>
+
+            <div class="setting-group">
+
+                <label>
+                    Learning Language
+                </label>
+
+                <select id="worksheetLanguage">
+
+                    <option value="Santhali">
+                        Santhali
+                    </option>
+
+                    <option value="Ho">
+                        Ho
+                    </option>
+
+                    <option value="Mundari">
+                        Mundari
+                    </option>
+
+                    <option value="Hindi">
+                        Hindi
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Lesson / Topic
+                </label>
+
+                <select id="worksheetTopic">
+
+                    <option value="Learning Letters">
+                        Learning Letters
+                    </option>
+
+                    <option value="Counting Numbers">
+                        Counting Numbers
+                    </option>
+
+                    <option value="Understanding Plants">
+                        Understanding Plants
+                    </option>
+
+                    <option value="Simple Words">
+                        Simple Words
+                    </option>
+
+                    <option value="Basic Addition">
+                        Basic Addition
+                    </option>
+
+                    <option value="Animals Around Us">
+                        Animals Around Us
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="setting-group">
+
+                <label>
+                    Difficulty Level
+                </label>
+
+                <select id="worksheetLevel">
+
+                    <option value="Beginner">
+                        Beginner
+                    </option>
+
+                    <option value="Easy">
+                        Easy
+                    </option>
+
+                    <option value="Practice">
+                        Practice
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="generate-worksheet-button"
+                onclick="generateWorksheet()"
+            >
+                ✨ Generate Worksheet
+            </button>
+
+        </div>
+
+
+        <!-- PREVIEW -->
+
+        <div class="worksheet-preview">
+
+            <div class="preview-header">
+
+                <div>
+
+                    <span>
+                        WORKSHEET PREVIEW
+                    </span>
+
+                    <h2 id="previewTitle">
+                        Learning Letters
+                    </h2>
+
+                </div>
+
+                <span
+                    class="preview-language"
+                    id="previewLanguage"
+                >
+                    Santhali
+                </span>
+
+            </div>
+
+
+            <div
+                class="worksheet-paper"
+                id="worksheetPaper"
+            >
+
+                <div class="paper-header">
+
+                    <h1>
+                        VernacularLearn
+                    </h1>
+
+                    <p>
+                        Mother-Tongue Learning Worksheet
+                    </p>
+
+                    <div class="paper-line"></div>
+
+                </div>
+
+
+                <div class="student-details">
+
+                    <span>
+                        Name: __________________
+                    </span>
+
+                    <span>
+                        Date: ______________
+                    </span>
+
+                </div>
+
+
+                <div class="paper-topic">
+
+                    <span>
+                        Topic
+                    </span>
+
+                    <h2 id="paperTopic">
+                        Learning Letters
+                    </h2>
+
+                </div>
+
+
+                <div id="questionsContainer">
+
+                    <div class="worksheet-question">
+
+                        <strong>
+                            1.
+                        </strong>
+
+                        <p>
+                            Write the first five letters of
+                            the alphabet.
+                        </p>
+
+                        <div class="answer-line"></div>
+
+                    </div>
+
+
+                    <div class="worksheet-question">
+
+                        <strong>
+                            2.
+                        </strong>
+
+                        <p>
+                            Match the letters with the correct
+                            objects.
+                        </p>
+
+                        <div class="matching-box">
+                            A → ______
+                            <br>
+                            B → ______
+                            <br>
+                            C → ______
+                        </div>
+
+                    </div>
+
+
+                    <div class="worksheet-question">
+
+                        <strong>
+                            3.
+                        </strong>
+
+                        <p>
+                            Write one simple word beginning
+                            with the letter A.
+                        </p>
+
+                        <div class="answer-line"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="paper-footer">
+
+                    Learning with understanding ❤️
+
+                </div>
+
+            </div>
+
+
+            <div class="preview-actions">
+
+                <button onclick="printWorksheet()">
+                    🖨️ Print Worksheet
+                </button>
+
+                <button onclick="downloadWorksheet()">
+                    📄 Save / Download
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INFO ================= -->
+
+<section class="worksheet-info">
+
+    <div class="worksheet-info-container">
+
+        <div class="worksheet-info-card">
+
+            <div>🌐</div>
+
+            <h3>
+                Bilingual Learning
+            </h3>
+
+            <p>
+                Worksheets can combine standard Hindi
+                curriculum content with mother-tongue support.
+            </p>
+
+        </div>
+
+
+        <div class="worksheet-info-card">
+
+            <div>🎯</div>
+
+            <h3>
+                Learning Outcomes
+            </h3>
+
+            <p>
+                Activities can be aligned with foundational
+                literacy and numeracy learning outcomes.
+            </p>
+
+        </div>
+
+
+        <div class="worksheet-info-card">
+
+            <div>📱</div>
+
+            <h3>
+                Low-Resource Friendly
+            </h3>
+
+            <p>
+                The worksheet interface is designed for
+                low-cost classroom devices.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTICE ================= -->
+
+<section class="worksheet-notice">
+
+    <div>
+
+        <strong>
+            🧪 Prototype Mode
+        </strong>
+
+        <p>
+            This prototype demonstrates worksheet generation
+            using predefined learning content. A production
+            AI engine can generate curriculum-aligned bilingual
+            worksheets dynamically.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                🧠 VernacularLearn
+            </h3>
+
+            <p>
+                AI-assisted mother-tongue learning
+                for primary education.
+            </p>
+
+        </div>
+
+        <div>
+
+            <p>
+                SIH26042 Prototype
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* ==========================================
+   LOAD SAVED SETTINGS
+   ========================================== */
+
+const savedLanguage =
+    localStorage.getItem("selectedLanguage");
+
+const savedLesson =
+    localStorage.getItem("selectedLesson");
+
+
+if (savedLanguage) {
+
+    document.getElementById("worksheetLanguage")
+        .value = savedLanguage;
+
+    document.getElementById("previewLanguage")
+        .textContent = savedLanguage;
+
+}
+
+
+if (savedLesson) {
+
+    const topicSelect =
+        document.getElementById("worksheetTopic");
+
+    const options =
+        Array.from(topicSelect.options);
+
+    const matchingOption =
+        options.find(function(option) {
+
+            return option.value === savedLesson;
+
+        });
+
+
+    if (matchingOption) {
+
+        topicSelect.value =
+            savedLesson;
+
+        document.getElementById("previewTitle")
+            .textContent = savedLesson;
+
+        document.getElementById("paperTopic")
+            .textContent = savedLesson;
+
+    }
+
+}
+
+
+/* ==========================================
+   GENERATE WORKSHEET
+   ========================================== */
+
+function generateWorksheet() {
+
+    const language =
+        document.getElementById("worksheetLanguage")
+            .value;
+
+    const topic =
+        document.getElementById("worksheetTopic")
+            .value;
+
+    const level =
+        document.getElementById("worksheetLevel")
+            .value;
+
+
+    document.getElementById("previewTitle")
+        .textContent = topic;
+
+    document.getElementById("paperTopic")
+        .textContent = topic;
+
+    document.getElementById("previewLanguage")
+        .textContent = language;
+
+
+    const questionsContainer =
+        document.getElementById("questionsContainer");
+
+
+    let questions = [];
+
+
+    if (topic === "Learning Letters") {
+
+        questions = [
+
+            "Write five letters of the alphabet.",
+
+            "Match the letters with the correct objects.",
+
+            "Write one simple word beginning with A."
+
+        ];
+
+    }
+
+
+    else if (topic === "Counting Numbers") {
+
+        questions = [
+
+            "Write numbers from 1 to 10.",
+
+            "Count the objects and write the number.",
+
+            "Which number comes after 5?"
+
+        ];
+
+    }
+
+
+    else if (topic === "Understanding Plants") {
+
+        questions = [
+
+            "Name one part of a plant.",
+
+            "Which part absorbs water from the soil?",
+
+            "Draw a simple plant and label its parts."
+
+        ];
+
+    }
+
+
+    else if (topic === "Simple Words") {
+
+        questions = [
+
+            "Write three simple words.",
+
+            "Complete the missing letter in each word.",
+
+            "Match words with their meanings."
+
+        ];
+
+    }
+
+
+    else if (topic === "Basic Addition") {
+
+        questions = [
+
+            "Solve: 2 + 3 = ______",
+
+            "Solve: 4 + 2 = ______",
+
+            "Solve: 5 + 3 = ______"
+
+        ];
+
+    }
+
+
+    else if (topic === "Animals Around Us") {
+
+        questions = [
+
+            "Name two animals.",
+
+            "Which animals live on a farm?",
+
+            "Draw your favourite animal."
+
+        ];
+
+    }
+
+
+    let html = "";
+
+
+    questions.forEach(function(question, index) {
+
+        html += `
+
+            <div class="worksheet-question">
+
+                <strong>
+                    ${index + 1}.
+                </strong>
+
+                <p>
+                    ${question}
+                </p>
+
+                <div class="answer-line"></div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    questionsContainer.innerHTML = html;
+
+
+    localStorage.setItem(
+        "worksheetLanguage",
+        language
+    );
+
+    localStorage.setItem(
+        "worksheetTopic",
+        topic
+    );
+
+    localStorage.setItem(
+        "worksheetLevel",
+        level
+    );
+
+
+    document.getElementById("worksheetPaper")
+        .scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+}
+
+
+/* ==========================================
+   PRINT
+   ========================================== */
+
+function printWorksheet() {
+
+    window.print();
+
+}
+
+
+/* ==========================================
+   DOWNLOAD
+   ========================================== */
+
+function downloadWorksheet() {
+
+    alert(
+        "📄 Download Demo\n\n" +
+        "In the final version, the generated worksheet " +
+        "can be exported as a printable PDF."
+    );
+
+}
+
+</script>
+
+</body>
+              </html>
