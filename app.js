@@ -137,3 +137,38 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+    // ------------------------------------------
+    // Simple Welcome Message
+    // ------------------------------------------
+
+    console.log(
+        "VernacularLearn SIH26042 initialized successfully."
+    );
+
+}); // <--- Yahan tumhara purana code khatam ho raha hai
+
+
+// 👇 ISKE THEEK NEECHE YEH NAYA CODE PASTE KAR DO 👇
+
+// ==========================================
+// LOCAL STORAGE: PROGRESS TRACKING
+// ==========================================
+
+// 1. Score save karne ka function (Jab student practice complete kare)
+function saveStudentScore(lessonName, score) {
+    let progressData = JSON.parse(localStorage.getItem("vernacularLearn_Scores")) || {};
+    progressData[lessonName] = score;
+    localStorage.setItem("vernacularLearn_Scores", JSON.stringify(progressData));
+    console.log(lessonName + " ka score save ho gaya: " + score);
+}
+
+// 2. Dashboard ke liye Total Score nikalne ka function
+function getTotalScore() {
+    let progressData = JSON.parse(localStorage.getItem("vernacularLearn_Scores")) || {};
+    let total = 0;
+    for (let lesson in progressData) {
+        total += progressData[lesson];
+    }
+    return total;
+}
+
