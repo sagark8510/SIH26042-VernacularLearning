@@ -548,12 +548,60 @@ function askSuggestion(button) {
 
 function voiceDemo() {
 
-    alert(
-        "🎤 Voice interaction demo\n\n" +
-        "In the final version, the teacher/student " +
-        "can speak a question and the system will " +
-        "convert speech into text before processing it."
-    );
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+
+        alert(
+            "🎤 Voice input is not supported in this browser.\n\n" +
+            "Please use a supported Chrome-based browser."
+        );
+
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "hi-IN";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onstart = function () {
+
+        document.getElementById("userQuestion").placeholder =
+            "🎤 Listening... Speak your question in Hindi.";
+
+    };
+
+    recognition.onresult = function (event) {
+
+        const spokenText =
+            event.results[0][0].transcript;
+
+        document.getElementById("userQuestion").value =
+            spokenText;
+
+    };
+
+    recognition.onerror = function () {
+
+        alert(
+            "🎤 Voice input could not be completed. " +
+            "Please try again."
+        );
+
+    };
+
+    recognition.onend = function () {
+
+        document.getElementById("userQuestion").placeholder =
+            "Ask your question in Hindi...";
+
+    };
+
+    recognition.start();
 
 }
 
