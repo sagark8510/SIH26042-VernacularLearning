@@ -1002,6 +1002,32 @@ function showFinalResult() {
 loadQuestion();
 
 </script>
+<!-- ================= PRACTICE SUBMIT BUTTON ================= -->
+<div style="text-align: center; margin: 40px;">
+    <button id="submitPracticeBtn" class="nav-button" style="padding: 15px 30px; font-size: 18px; cursor: pointer;">
+        Submit Test & View Score
+    </button>
+</div>
 
+<!-- ================= JAVASCRIPT ================= -->
+<!-- app.js link karna zaroori hai -->
+<script src="app.js"></script>
+<script>
+    document.getElementById("submitPracticeBtn").addEventListener("click", function() {
+        
+        // 1. Demo ke liye 10 marks save kar rahe hain (app.js wale function se)
+        if(typeof saveStudentScore === "function") {
+            saveStudentScore("Science_Demo_Quiz", 10);
+            alert("Score Saved Successfully! Taking you to Dashboard...");
+        } else {
+            alert("Error: Score function not found.");
+        }
+
+        // 2. Button dabte hi seedha Dashboard par le jao
+        window.location.href = "dashboard.html";
+        
+    });
+</script>
+    
 </body>
 </html>
