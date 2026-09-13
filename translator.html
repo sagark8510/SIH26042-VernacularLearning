@@ -529,28 +529,135 @@
 
         function translateText() {
 
-            const text =
-                hindiInput.value.trim();
+    const text = hindiInput.value.trim();
+    const language = targetLanguage.value;
 
-            const language =
-                targetLanguage.value;
+    const output =
+        document.getElementById("translationOutput");
 
-            const output =
-                document.getElementById("translationOutput");
+    const status =
+        document.getElementById("translationStatus");
 
-            const status =
-                document.getElementById("translationStatus");
+    if (!text) {
 
+        alert("Please enter Hindi content first.");
 
-            if (!text) {
+        return;
+    }
 
-                alert(
-                    "Please enter Hindi content first."
-                );
+    status.textContent = "Processing...";
 
-                return;
+    output.innerHTML = `
+        <div class="translation-processing">
+
+            <span class="processing-icon">
+                🤖
+            </span>
+
+            <h3>
+                Translation Engine
+            </h3>
+
+            <p>
+                Processing Hindi → ${language}
+            </p>
+
+        </div>
+    `;
+
+    setTimeout(function () {
+
+        /*
+         * VERIFIED PROTOTYPE PHRASES
+         * Only approved demo entries are translated.
+         */
+
+        const verifiedTranslations = {
+
+            "Santhali": {
+
+                "पानी":
+                    "ᱫᱟᱜ",
+
+                "जल":
+                    "ᱫᱟᱜ"
 
             }
+
+        };
+
+        const languageData =
+            verifiedTranslations[language];
+
+        const translatedText =
+            languageData &&
+            languageData[text];
+
+        if (translatedText) {
+
+            output.innerHTML = `
+
+                <div class="translation-result">
+
+                    <span class="result-icon">
+                        🌍
+                    </span>
+
+                    <h3>
+                        ${language} Translation
+                    </h3>
+
+                    <div class="translated-text">
+                        ${translatedText}
+                    </div>
+
+                    <small>
+                        Verified prototype phrase
+                    </small>
+
+                </div>
+
+            `;
+
+            status.textContent =
+                "Translated";
+
+        } else {
+
+            output.innerHTML = `
+
+                <div class="translation-placeholder">
+
+                    <span>
+                        🔎
+                    </span>
+
+                    <h3>
+                        Phrase not available
+                    </h3>
+
+                    <p>
+                        This phrase is not yet present
+                        in the verified prototype dataset.
+                    </p>
+
+                    <small>
+                        More verified language data will
+                        be added to the NLP engine.
+                    </small>
+
+                </div>
+
+            `;
+
+            status.textContent =
+                "Dataset";
+
+        }
+
+    }, 700);
+
+        }
 
 
             status.textContent =
