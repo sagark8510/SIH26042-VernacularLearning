@@ -508,19 +508,24 @@ function addAIMessage(text) {
 
     message.innerHTML = `
 
-        <div class="message-avatar">
-            🤖
-        </div>
+    <div class="message-avatar">
+        🤖
+    </div>
 
-        <div class="message-content">
+    <div class="message-content">
 
-            <strong>AI Assistant</strong>
+        <strong>AI Assistant</strong>
 
-            <p>${escapeHTML(text)}</p>
+        <p>${escapeHTML(text)}</p>
 
-        </div>
+        <button class="ai-listen-button"
+                onclick="speakAIResponse(this)">
+            🔊 Listen
+        </button>
 
-    `;
+    </div>
+
+`;
 
     chatArea.appendChild(message);
 
