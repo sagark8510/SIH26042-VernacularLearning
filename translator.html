@@ -801,10 +801,86 @@
 
         function listenTranslation() {
 
-            alert(
-                "🔊 Audio Output\n\n" +
-                "Text-to-speech for the selected mother tongue will be connected after the verified translation engine is integrated."
-            );
+    const output =
+        document.getElementById("translationOutput");
+
+    const translatedText =
+        output.querySelector(".translated-text");
+
+    if (!translatedText) {
+
+        alert(
+            "🔊 Please translate something first."
+        );
+
+        return;
+    }
+
+    const text =
+        translatedText.textContent.trim();
+
+    if (!text) {
+
+        alert(
+            "🔊 No translated text available."
+        );
+
+        return;
+    }
+
+    if (!("speechSynthesis" in window)) {
+
+        alert(
+            "🔊 Text-to-Speech is not supported in this browser."
+        );
+
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+    /*
+     * Prototype audio output.
+     * Browser uses an available installed voice.
+     */
+
+    speech.lang = "sat-IN";
+    speech.rate = 0.85;
+    speech.pitch = 1;
+
+    speech.onstart = function () {
+
+        document.getElementById(
+            "translationStatus"
+        ).textContent = "Speaking...";
+
+    };
+
+    speech.onend = function () {
+
+        document.getElementById(
+            "translationStatus"
+        ).textContent = "Translated";
+
+    };
+
+    speech.onerror = function () {
+
+        document.getElementById(
+            "translationStatus"
+        ).textContent = "Audio unavailable";
+
+        alert(
+            "🔊 A Santhali voice is not available in this browser.\n\n" +
+            "The translated text is working correctly."
+        );
+
+    };
+
+    window.speechSynthesis.speak(speech);
 
         }
 
