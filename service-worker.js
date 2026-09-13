@@ -3,7 +3,7 @@
 // Offline Service Worker
 // ==========================================
 
-const CACHE_NAME = "vernacularlearn-v2";
+const CACHE_NAME = "vernacularlearn-v3";
 
 const APP_FILES = [
     "./",
@@ -23,8 +23,11 @@ const APP_FILES = [
 
     "./style.css",
     "./app.js",
-
-    "./manifest.json"
+    "./manifest.json",
+    
+    // Niche tumhari app ki images add ho gayi hain
+    "./logo.png",
+    "./icon.png"
 ];
 
 
