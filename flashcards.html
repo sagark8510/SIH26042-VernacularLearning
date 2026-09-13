@@ -700,15 +700,27 @@ function speakCard() {
     const card =
         currentSet.cards[currentIndex];
 
+    if ("speechSynthesis" in window) {
 
-    alert(
-        "🔊 Audio Demo\n\n" +
-        card.title +
-        "\n\n" +
-        "In the final implementation, " +
-        "this card can be converted into " +
-        "mother-tongue speech."
-    );
+        const speech =
+            new SpeechSynthesisUtterance(
+                card.title + ". " + card.text
+            );
+
+        speech.lang = "hi-IN";
+        speech.rate = 0.85;
+
+        window.speechSynthesis.cancel();
+
+        window.speechSynthesis.speak(speech);
+
+    } else {
+
+        alert(
+            "Voice playback is not supported on this device."
+        );
+
+    }
 
 }
 
