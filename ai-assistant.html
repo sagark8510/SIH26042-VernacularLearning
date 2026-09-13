@@ -547,7 +547,35 @@ function askSuggestion(button) {
     sendQuestion();
 
 }
+function speakAIResponse(button) {
 
+    const messageContent = button.parentElement;
+
+    const textElement =
+        messageContent.querySelector("p");
+
+    if (!textElement) {
+        return;
+    }
+
+    const text = textElement.textContent;
+
+    if (!("speechSynthesis" in window)) {
+        alert("🔊 Text-to-Speech is not supported in this browser.");
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang = "en-IN";
+    speech.rate = 0.9;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+}
 
 /* ================= VOICE DEMO ================= */
 
