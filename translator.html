@@ -685,12 +685,68 @@
 
         function startVoiceInput() {
 
-            alert(
-                "🎙️ Voice Input\n\n" +
-                "Teacher Hindi speech → Speech Recognition → Hindi text.\n\n" +
-                "The real voice-to-voice pipeline will be connected in the next stage."
-            );
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
 
+    if (!SpeechRecognition) {
+
+        alert(
+            "🎙️ Voice input is not supported in this browser.\n\n" +
+            "Please use a supported Chrome-based browser."
+        );
+
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "hi-IN";
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onstart = function () {
+
+        hindiInput.placeholder =
+            "🎙️ Listening... Speak in Hindi.";
+
+        document.getElementById("translationStatus").textContent =
+            "Listening...";
+    };
+
+    recognition.onresult = function (event) {
+
+        const spokenText =
+            event.results[0][0].transcript;
+
+        hindiInput.value = spokenText;
+
+        characterCount.textContent =
+            spokenText.length + " / 1000";
+
+        document.getElementById("translationStatus").textContent =
+            "Voice input received";
+    };
+
+    recognition.onerror = function () {
+
+        alert(
+            "🎙️ Voice input could not be completed.\n\n" +
+            "Please try again."
+        );
+
+        document.getElementById("translationStatus").textContent =
+            "Ready";
+    };
+
+    recognition.onend = function () {
+
+        hindiInput.placeholder =
+            "Type or paste Hindi lesson content here...";
+
+    };
+
+    recognition.start();
         }
 
 
