@@ -658,69 +658,7 @@
     }, 700);
 
         }
-
-
-            status.textContent =
-                "Processing...";
-
-
-            output.innerHTML = `
-
-                <div class="translation-processing">
-
-                    <span class="processing-icon">
-                        🤖
-                    </span>
-
-                    <h3>
-                        Translation Engine
-                    </h3>
-
-                    <p>
-                        Processing Hindi → ${language}
-                    </p>
-
-                </div>
-
-            `;
-
-
-            setTimeout(function () {
-
-                output.innerHTML = `
-
-                    <div class="translation-placeholder">
-
-                        <span>
-                            🌐
-                        </span>
-
-                        <h3>
-                            ${language} Translation
-                        </h3>
-
-                        <p>
-                            Verified ${language} translation
-                            will appear here when the NLP
-                            translation engine is connected.
-                        </p>
-
-                        <small>
-                            Prototype output area
-                        </small>
-
-                    </div>
-
-                `;
-
-
-                status.textContent =
-                    "Prototype";
-
-            }, 900);
-
-        }
-
+        
 
         /* =====================================
            CLEAR
