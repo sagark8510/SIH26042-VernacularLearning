@@ -873,40 +873,37 @@
 
 </footer>
 
-
 <!-- ================= JAVASCRIPT ================= -->
+
+<!-- Sabse pehle app.js ko link karna zaroori hai -->
+<script src="app.js"></script>
 
 <script>
 
-const savedLanguage =
-    localStorage.getItem("selectedLanguage");
-
+// 1. Language update
+const savedLanguage = localStorage.getItem("selectedLanguage");
 if (savedLanguage) {
-
-    document.getElementById("dashboardLanguage")
-        .textContent = savedLanguage;
-
+    document.getElementById("dashboardLanguage").textContent = savedLanguage;
 }
 
-
-/* Current date */
-
+// 2. Date update
 const today = new Date();
+const dateText = today.toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+});
+document.getElementById("todayDate").textContent = dateText;
 
-const dateText =
-    today.toLocaleDateString(
-        "en-IN",
-        {
-            day: "numeric",
-            month: "long",
-            year: "numeric"
-        }
-    );
 
-document.getElementById("todayDate")
-    .textContent = dateText;
+// 3. ✨ NAYA JADOO: Live score update karna ✨
+if (typeof getTotalScore === "function") {
+    // app.js wale function se real score maango aur dashboard pe dikhao
+    document.getElementById("dynamicTotalScore").textContent = getTotalScore();
+}
 
 </script>
 
 </body>
+    
   </html>
