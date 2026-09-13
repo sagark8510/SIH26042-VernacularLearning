@@ -459,48 +459,246 @@ const savedLanguage =
 const savedLesson =
     localStorage.getItem("selectedLesson");
 
+const worksheetLanguage =
+    document.getElementById("worksheetLanguage");
 
-if (savedLanguage) {
+const worksheetTopic =
+    document.getElementById("worksheetTopic");
 
-    document.getElementById("worksheetLanguage")
-        .value = savedLanguage;
+const worksheetLevel =
+    document.getElementById("worksheetLevel");
 
-    document.getElementById("previewLanguage")
-        .textContent = savedLanguage;
+const previewLanguage =
+    document.getElementById("previewLanguage");
+
+const previewTitle =
+    document.getElementById("previewTitle");
+
+const paperTopic =
+    document.getElementById("paperTopic");
+
+
+if (savedLanguage && worksheetLanguage) {
+
+    worksheetLanguage.value = savedLanguage;
+
+    previewLanguage.textContent = savedLanguage;
 
 }
 
 
-if (savedLesson) {
-
-    const topicSelect =
-        document.getElementById("worksheetTopic");
-
-    const options =
-        Array.from(topicSelect.options);
+if (savedLesson && worksheetTopic) {
 
     const matchingOption =
-        options.find(function(option) {
-
-            return option.value === savedLesson;
-
-        });
-
+        Array.from(worksheetTopic.options).find(
+            function (option) {
+                return option.value === savedLesson;
+            }
+        );
 
     if (matchingOption) {
 
-        topicSelect.value =
-            savedLesson;
+        worksheetTopic.value = savedLesson;
 
-        document.getElementById("previewTitle")
-            .textContent = savedLesson;
+        previewTitle.textContent = savedLesson;
 
-        document.getElementById("paperTopic")
-            .textContent = savedLesson;
+        paperTopic.textContent = savedLesson;
 
     }
 
 }
+
+
+/* ==========================================
+   WORKSHEET CONTENT
+   Prototype learning content
+   ========================================== */
+
+const worksheetData = {
+
+    "Learning Letters": {
+
+        "Beginner": [
+            "Write five letters of the alphabet.",
+            "Match the letters with the correct objects.",
+            "Write one simple word beginning with A."
+        ],
+
+        "Easy": [
+            "Write ten letters of the alphabet.",
+            "Match each letter with a suitable word.",
+            "Write three simple words beginning with A, B and C."
+        ],
+
+        "Practice": [
+            "Write the alphabet from A to J.",
+            "Write one word for each of five given letters.",
+            "Circle the first letter of each simple word."
+        ]
+
+    },
+
+
+    "Counting Numbers": {
+
+        "Beginner": [
+            "Write numbers from 1 to 10.",
+            "Count the objects and write the number.",
+            "Which number comes after 5?"
+        ],
+
+        "Easy": [
+            "Write numbers from 1 to 20.",
+            "Count and write the number of objects.",
+            "Which number comes before 10?"
+        ],
+
+        "Practice": [
+            "Write numbers from 1 to 30.",
+            "Arrange the given numbers in increasing order.",
+            "Fill in the missing numbers in the sequence."
+        ]
+
+    },
+
+
+    "Understanding Plants": {
+
+        "Beginner": [
+            "Name one part of a plant.",
+            "Which part absorbs water from the soil?",
+            "Draw a simple plant and label its parts."
+        ],
+
+        "Easy": [
+            "Name three main parts of a plant.",
+            "What does the root take from the soil?",
+            "Draw a plant and label the root, stem and leaves."
+        ],
+
+        "Practice": [
+            "Write the functions of root, stem and leaves.",
+            "Why do plants need water?",
+            "Draw a plant and label its main parts."
+        ]
+
+    },
+
+
+    "Simple Words": {
+
+        "Beginner": [
+            "Write three simple words.",
+            "Complete the missing letter in each word.",
+            "Match words with their meanings."
+        ],
+
+        "Easy": [
+            "Write five simple words.",
+            "Complete the missing letters in the given words.",
+            "Match each word with its correct meaning."
+        ],
+
+        "Practice": [
+            "Write five words and use two of them in sentences.",
+            "Complete the words using the correct letters.",
+            "Match each word with its related meaning."
+        ]
+
+    },
+
+
+    "Basic Addition": {
+
+        "Beginner": [
+            "Solve: 2 + 3 = ______",
+            "Solve: 4 + 2 = ______",
+            "Solve: 5 + 3 = ______"
+        ],
+
+        "Easy": [
+            "Solve: 7 + 3 = ______",
+            "Solve: 6 + 5 = ______",
+            "Solve: 8 + 4 = ______"
+        ],
+
+        "Practice": [
+            "Solve: 12 + 7 = ______",
+            "Solve: 15 + 9 = ______",
+            "Solve: 18 + 6 = ______"
+        ]
+
+    },
+
+
+    "Animals Around Us": {
+
+        "Beginner": [
+            "Name two animals.",
+            "Which animals live on a farm?",
+            "Draw your favourite animal."
+        ],
+
+        "Easy": [
+            "Name three animals.",
+            "Write the names of two farm animals.",
+            "Draw an animal and write its name."
+        ],
+
+        "Practice": [
+            "Write five animal names.",
+            "Group the animals into farm and wild animals.",
+            "Draw one animal and write two facts about it."
+        ]
+
+    }
+
+};
+
+
+/* ==========================================
+   MOTHER-TONGUE PROTOTYPE SUPPORT
+   ========================================== */
+
+/*
+   IMPORTANT:
+   We do NOT invent translations here.
+
+   The final NLP engine will replace this
+   prototype layer with verified translations.
+*/
+
+const verifiedMotherTongueContent = {
+
+    "Santhali": {
+
+        "Learning Letters": [
+            "Mother-tongue translation will be provided by the verified language engine."
+        ],
+
+        "Counting Numbers": [
+            "Mother-tongue translation will be provided by the verified language engine."
+        ],
+
+        "Understanding Plants": [
+            "Mother-tongue translation will be provided by the verified language engine."
+        ],
+
+        "Simple Words": [
+            "Mother-tongue translation will be provided by the verified language engine."
+        ],
+
+        "Basic Addition": [
+            "Mother-tongue translation will be provided by the verified language engine."
+        ],
+
+        "Animals Around Us": [
+            "Mother-tongue translation will be provided by the verified language engine."
+        ]
+
+    }
+
+};
 
 
 /* ==========================================
@@ -510,153 +708,129 @@ if (savedLesson) {
 function generateWorksheet() {
 
     const language =
-        document.getElementById("worksheetLanguage")
-            .value;
+        worksheetLanguage.value;
 
     const topic =
-        document.getElementById("worksheetTopic")
-            .value;
+        worksheetTopic.value;
 
     const level =
-        document.getElementById("worksheetLevel")
-            .value;
+        worksheetLevel.value;
 
 
-    document.getElementById("previewTitle")
-        .textContent = topic;
+    /* Update preview */
 
-    document.getElementById("paperTopic")
-        .textContent = topic;
+    previewTitle.textContent =
+        topic;
 
-    document.getElementById("previewLanguage")
-        .textContent = language;
+    paperTopic.textContent =
+        topic;
+
+    previewLanguage.textContent =
+        language;
 
 
-    const questionsContainer =
-        document.getElementById("questionsContainer");
-
+    /* Get questions */
 
     let questions = [];
 
+    if (
+        worksheetData[topic] &&
+        worksheetData[topic][level]
+    ) {
 
-    if (topic === "Learning Letters") {
-
-        questions = [
-
-            "Write five letters of the alphabet.",
-
-            "Match the letters with the correct objects.",
-
-            "Write one simple word beginning with A."
-
-        ];
+        questions =
+            worksheetData[topic][level];
 
     }
 
 
-    else if (topic === "Counting Numbers") {
-
-        questions = [
-
-            "Write numbers from 1 to 10.",
-
-            "Count the objects and write the number.",
-
-            "Which number comes after 5?"
-
-        ];
-
-    }
+    const questionsContainer =
+        document.getElementById(
+            "questionsContainer"
+        );
 
 
-    else if (topic === "Understanding Plants") {
+    if (!questions.length) {
 
-        questions = [
+        questionsContainer.innerHTML = `
+            <div class="worksheet-question">
+                <p>
+                    Learning content is not available
+                    for this selection yet.
+                </p>
+            </div>
+        `;
 
-            "Name one part of a plant.",
-
-            "Which part absorbs water from the soil?",
-
-            "Draw a simple plant and label its parts."
-
-        ];
+        return;
 
     }
 
 
-    else if (topic === "Simple Words") {
-
-        questions = [
-
-            "Write three simple words.",
-
-            "Complete the missing letter in each word.",
-
-            "Match words with their meanings."
-
-        ];
-
-    }
-
-
-    else if (topic === "Basic Addition") {
-
-        questions = [
-
-            "Solve: 2 + 3 = ______",
-
-            "Solve: 4 + 2 = ______",
-
-            "Solve: 5 + 3 = ______"
-
-        ];
-
-    }
-
-
-    else if (topic === "Animals Around Us") {
-
-        questions = [
-
-            "Name two animals.",
-
-            "Which animals live on a farm?",
-
-            "Draw your favourite animal."
-
-        ];
-
-    }
-
+    /* Build worksheet */
 
     let html = "";
 
 
-    questions.forEach(function(question, index) {
+    questions.forEach(
+        function (question, index) {
+
+            html += `
+
+                <div class="worksheet-question">
+
+                    <strong>
+                        ${index + 1}.
+                    </strong>
+
+                    <p>
+                        ${question}
+                    </p>
+
+                    <div class="answer-line"></div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+    /*
+       Add mother-tongue support section
+       only when a supported language
+       is selected.
+    */
+
+    if (
+        language === "Santhali" &&
+        verifiedMotherTongueContent.Santhali[topic]
+    ) {
 
         html += `
 
-            <div class="worksheet-question">
+            <div class="worksheet-question mother-tongue-section">
 
                 <strong>
-                    ${index + 1}.
+                    🌐 Mother-Tongue Support
                 </strong>
 
                 <p>
-                    ${question}
+                    ${verifiedMotherTongueContent.Santhali[topic][0]}
                 </p>
-
-                <div class="answer-line"></div>
 
             </div>
 
         `;
 
-    });
+    }
 
 
-    questionsContainer.innerHTML = html;
+    questionsContainer.innerHTML =
+        html;
 
+
+    /* Save settings */
 
     localStorage.setItem(
         "worksheetLanguage",
@@ -674,17 +848,20 @@ function generateWorksheet() {
     );
 
 
-    document.getElementById("worksheetPaper")
-        .scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
+    /* Scroll to preview */
+
+    document.getElementById(
+        "worksheetPaper"
+    ).scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 
 }
 
 
 /* ==========================================
-   PRINT
+   PRINT WORKSHEET
    ========================================== */
 
 function printWorksheet() {
@@ -695,20 +872,70 @@ function printWorksheet() {
 
 
 /* ==========================================
-   DOWNLOAD
+   DOWNLOAD / EXPORT
    ========================================== */
 
 function downloadWorksheet() {
 
     alert(
-        "📄 Download Demo\n\n" +
-        "In the final version, the generated worksheet " +
-        "can be exported as a printable PDF."
+        "📄 Worksheet Export\n\n" +
+        "The worksheet is ready for printing.\n\n" +
+        "PDF export will be connected in the final version."
     );
 
 }
 
+
+/* ==========================================
+   LIVE PREVIEW UPDATE
+   ========================================== */
+
+if (worksheetLanguage) {
+
+    worksheetLanguage.addEventListener(
+        "change",
+        function () {
+
+            previewLanguage.textContent =
+                this.value;
+
+        }
+    );
+
+}
+
+
+if (worksheetTopic) {
+
+    worksheetTopic.addEventListener(
+        "change",
+        function () {
+
+            previewTitle.textContent =
+                this.value;
+
+            paperTopic.textContent =
+                this.value;
+
+        }
+    );
+
+}
+
+
+/* ==========================================
+   INITIAL GENERATION
+   ========================================== */
+
+generateWorksheet();
+
+
+console.log(
+    "VernacularLearn Worksheet Generator initialized."
+);
+
 </script>
+    
 
 </body>
               </html>
