@@ -1010,20 +1010,18 @@ loadQuestion();
 </div>
 
 <!-- ================= JAVASCRIPT ================= -->
-<!-- app.js link karna zaroori hai -->
-<script src="app.js"></script>
 <script>
     document.getElementById("submitPracticeBtn").addEventListener("click", function() {
         
-        // 1. Demo ke liye 10 marks save kar rahe hain (app.js wale function se)
-        if(typeof saveStudentScore === "function") {
-            saveStudentScore("Science_Demo_Quiz", 10);
-            alert("Score Saved Successfully! Taking you to Dashboard...");
-        } else {
-            alert("Error: Score function not found.");
-        }
-
-        // 2. Button dabte hi seedha Dashboard par le jao
+        // Seedha yahi par score save kar dete hain (Bina app.js ke)
+        let progressData = JSON.parse(localStorage.getItem("vernacularLearn_Scores")) || {};
+        progressData["Demo_Practice"] = 10;
+        localStorage.setItem("vernacularLearn_Scores", JSON.stringify(progressData));
+        
+        // Success message
+        alert("Score Saved Successfully! 🚀 Taking you to Dashboard...");
+        
+        // Button dabte hi seedha Dashboard par le jao
         window.location.href = "dashboard.html";
         
     });
