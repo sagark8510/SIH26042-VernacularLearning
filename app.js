@@ -172,3 +172,19 @@ function getTotalScore() {
     return total;
 }
 
+// ==========================================
+// PWA: SERVICE WORKER REGISTRATION
+// ==========================================
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+        navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(function (registration) {
+                console.log("Service Worker Active! App is now Offline Ready. 🚀");
+            })
+            .catch(function (error) {
+                console.log("Service Worker Fail ho gaya:", error);
+            });
+    });
+}
