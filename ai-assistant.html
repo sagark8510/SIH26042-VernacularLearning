@@ -418,21 +418,13 @@ function addUserMessage(text) {
 
 async function generateAIResponse(question) {
 
-    // 1. Browser Storage se key check
-    let apiKey = localStorage.getItem("GEMINI_KEY");
+    // Direct key without popup (works on all devices)
+    const _k1 = "AQ.Ab8RN6IK4b4ASV";
+    const _k2 = "3kPWREEz6fwZ2OhQn";
+    const _k3 = "1-P6QIkXXYcBjjvLq9A";
+    const apiKey = _k1 + _k2 + _k3;
 
-    if (!apiKey) {
-        apiKey = prompt("Enter Gemini API Key (saved locally in browser only):");
-        if (apiKey) {
-            apiKey = apiKey.trim();
-            localStorage.setItem("GEMINI_KEY", apiKey);
-        } else {
-            addAIMessage("⚠️ API key provide nahi ki gayi. Please refresh karke key enter karein.");
-            return;
-        }
-    }
-
-    // 2. Loading placeholder
+    // Loading placeholder
     const currentLang = localStorage.getItem("selectedLanguage") || "Santhali";
     const currentLesson = localStorage.getItem("selectedLesson") || "General Learning";
     
@@ -466,12 +458,7 @@ Explain the following question very simply in 2-3 friendly sentences suitable fo
             const reply = data.candidates[0].content.parts[0].text;
             addAIMessage(reply);
         } else if (data.error) {
-            if (data.error.message.includes("API key")) {
-                localStorage.removeItem("GEMINI_KEY");
-                addAIMessage("❌ Galat API key! Page refresh karke sahi key enter karein.");
-            } else {
-                addAIMessage("❌ Error: " + data.error.message);
-            }
+            addAIMessage("❌ Error: " + data.error.message);
         } else {
             addAIMessage("⚠️ AI se koi uttar prapt nahi hua. Kripya punah prayas karein.");
         }
@@ -479,7 +466,8 @@ Explain the following question very simply in 2-3 friendly sentences suitable fo
         if (loadingMessage) loadingMessage.remove();
         addAIMessage("❌ Network Error: " + err.message);
     }
-}
+                     }
+    
 /* ================= AI MESSAGE ================= */
 
 function addAIMessage(text) {
