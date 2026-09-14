@@ -414,85 +414,72 @@ function addUserMessage(text) {
 
 }
 
+/* ================= REAL GEMINI AI RESPONSE ================= */
 
-/* ================= AI RESPONSE ================= */
+async function generateAIResponse(question) {
 
-function generateAIResponse(question) {
+    // 1. Browser Storage se key check
+    let apiKey = localStorage.getItem("GEMINI_KEY");
 
-    const lowerQuestion =
-        question.toLowerCase();
-
-    let answer = "";
-
-
-    if (
-        lowerQuestion.includes("plant") ||
-        lowerQuestion.includes("पौध") ||
-        lowerQuestion.includes("paani") ||
-        lowerQuestion.includes("पानी")
-    ) {
-
-        answer =
-        "Plants mainly absorb water and minerals from the soil through their roots. Roots also help anchor the plant in the soil.";
-
+    if (!apiKey) {
+        apiKey = prompt("Enter Gemini API Key (saved locally in browser only):");
+        if (apiKey) {
+            apiKey = apiKey.trim();
+            localStorage.setItem("GEMINI_KEY", apiKey);
+        } else {
+            addAIMessage("⚠️ API key provide nahi ki gayi. Please refresh karke key enter karein.");
+            return;
+        }
     }
 
-    else if (
-        lowerQuestion.includes("addition") ||
-        lowerQuestion.includes("जोड़") ||
-        lowerQuestion.includes("jod")
-    ) {
+    // 2. Loading placeholder
+    const currentLang = localStorage.getItem("selectedLanguage") || "Santhali";
+    const currentLesson = localStorage.getItem("selectedLesson") || "General Learning";
+    
+    addAIMessage("⏳ Vernacular AI soch raha hai...");
+    const chatArea = document.getElementById("chatArea");
+    const loadingMessage = chatArea.lastElementChild;
 
-        answer =
-        "Addition means combining two or more numbers to find their total. For example, 2 and 3 together make 5.";
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
+    const promptText = `You are an AI Pedagogy Assistant for primary school children (VernacularLearn app).
+The student is learning in: ${currentLang}.
+Current lesson topic: ${currentLesson}.
+Explain the following question very simply in 2-3 friendly sentences suitable for a young student (use simple Hindi mixed with simple terminology):
+"${question}"`;
+
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                contents: [{
+                    parts: [{ text: promptText }]
+                }]
+            })
+        });
+
+        const data = await response.json();
+        if (loadingMessage) loadingMessage.remove();
+
+        if (data.candidates && data.candidates[0].content.parts[0].text) {
+            const reply = data.candidates[0].content.parts[0].text;
+            addAIMessage(reply);
+        } else if (data.error) {
+            if (data.error.message.includes("API key")) {
+                localStorage.removeItem("GEMINI_KEY");
+                addAIMessage("❌ Galat API key! Page refresh karke sahi key enter karein.");
+            } else {
+                addAIMessage("❌ Error: " + data.error.message);
+            }
+        } else {
+            addAIMessage("⚠️ AI se koi uttar prapt nahi hua. Kripya punah prayas karein.");
+        }
+    } catch (err) {
+        if (loadingMessage) loadingMessage.remove();
+        addAIMessage("❌ Network Error: " + err.message);
     }
-
-    else if (
-        lowerQuestion.includes("animal") ||
-        lowerQuestion.includes("जानवर")
-    ) {
-
-        answer =
-        "Animals are living organisms. They need food, water and air to survive. Animals can live in different places such as forests, farms and water.";
-
-    }
-
-    else if (
-        lowerQuestion.includes("alphabet") ||
-        lowerQuestion.includes("letter") ||
-        lowerQuestion.includes("अक्षर")
-    ) {
-
-        answer =
-        "The alphabet is a set of letters used to form words. Learning letters step by step helps children read and write simple words.";
-
-    }
-
-    else if (
-        lowerQuestion.includes("hello") ||
-        lowerQuestion.includes("namaste") ||
-        lowerQuestion.includes("hi")
-    ) {
-
-        answer =
-        "Namaste! 👋 I am your learning assistant. Ask me about your lesson and I will try to explain it simply.";
-
-    }
-
-    else {
-
-        answer =
-        "This is a prototype AI response. In the final system, an AI/NLP engine can analyse the learner's question, understand the lesson context and provide a personalised explanation in the selected language.";
-
-    }
-
-
-    addAIMessage(answer);
-
 }
-
-
 /* ================= AI MESSAGE ================= */
 
 function addAIMessage(text) {
