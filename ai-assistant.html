@@ -432,7 +432,7 @@ async function generateAIResponse(question) {
     const chatArea = document.getElementById("chatArea");
     const loadingMessage = chatArea.lastElementChild;
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key=${apiKey}`;
 
     const promptText = `You are an AI Pedagogy Assistant for primary school children (VernacularLearn app).
 The student is learning in: ${currentLang}.
